@@ -39,6 +39,12 @@ export default function Home() {
             <p> the github.</p>
           </a>
 
+
+          <ul>
+              <li><Link href="db"><a>Titres</a></Link></li>
+            
+            </ul>
+
           
         </div>
       </main>
