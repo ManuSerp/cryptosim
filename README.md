@@ -7,8 +7,7 @@ Il y aura aussi une option échange ou l'utilsateur pourra voir quelles cryptomo
 Il y aura aussi une fonctionalité qui permettra de classer les différents utilisateurs selon leurs gains. Ce classement sera visible a tous les utilisateurs.
 
 Lien vers le site: 
-https://cryptosim-bgds.herokuapp.com/
-
+https://cryptosim.vercel.app/
 Ebauche du template du site qui indique grossièrement les différentes fonctionnalités et leur disposition.
 ![image](https://user-images.githubusercontent.com/85102352/155300978-85bcf744-df01-4cba-a454-48301a3317f6.png)
 
