@@ -35,13 +35,6 @@ export default function Home() {
             <h2>Cryptosim github &rarr;</h2>
             <p> the github.</p>
           </a>
-
-          <p>
-            vasy:{" "}
-            <Link href="/db">
-              <a>this page!</a>
-            </Link>
-          </p>
         </div>
       </main>
 
