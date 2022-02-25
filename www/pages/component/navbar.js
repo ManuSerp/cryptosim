@@ -1,9 +1,7 @@
-const navbar = () => {
+export default function navbar() {
   return (
-    <>
+    <div>
       <p>test</p>
-    </>
+    </div>
   );
-};
-
-export default navbar;
+}
