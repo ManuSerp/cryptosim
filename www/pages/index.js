@@ -1,3 +1,9 @@
+import LeaderBoard from "../component/leaderboard";
+
 export default function Home() {
-  return <div></div>;
+  return (
+    <div>
+      <LeaderBoard />
+    </div>
+  );
 }
