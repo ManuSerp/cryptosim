@@ -2,37 +2,12 @@
 
 body {
   background-color: #282a36;
+  color: #e1ec98;
   font-family: "Nunito";
 }
-a {
-  color: #333;
-  text-decoration: none;
-}
+
 #info-log {
   background-color: rgb(7, 5, 54);
   margin-top: 20vh;
   min-height: 40vh;
-}
-
-.about {
-  color: #e1ec98;
-}
-
-.content {
-  color: #e1ec98;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.LeaderBoard {
-  border: 1px solid #eaeaea;
-  padding: 30px;
-}
-
-.StockPriceList {
-  flex-grow: 7;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }

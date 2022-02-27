@@ -5,20 +5,20 @@ function Navbar() {
   return (
     <nav>
       <Link href="/">
-        <a className="logo">
+        <a className="nav-logo">
           <Image src="/img/index.png" width={50} height={50} />
         </a>
       </Link>
       <Link href="/">
-        <a className="title">Cryptosim</a>
+        <a className="nav-title">Cryptosim</a>
       </Link>
       <Link href="/about">
-        <a>About</a>
+        <a className="nav-about" >About</a>
       </Link>
       <Link href="/login">
-        <a>Login</a>
+        <a className="nav-login">Login</a>
       </Link>
-      <a> Research</a>
+      <a className="nav-search"> Research</a>
     </nav>
   );
 }

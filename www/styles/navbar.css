@@ -5,19 +5,19 @@ nav {
   justify-content: flex-start;
   align-items: center;
   border-bottom: 1px solid #ddd;
-  color: #ec83c0;
-}
-nav a {
-  order: 3;
-  margin-left: 12px;
-  color: #ec83c0;
-  font-size: larger;
-}
-nav a .title {
-  order: 2;
 }
 
-nav .logo {
-  margin-right: auto;
-  order: 1;
+nav a {
+  color: #ec83c0;
+  font-size: larger;
+  margin: 5px;
+}
+
+.nav-title {
+  flex-basis: 90%;
+}
+
+.nav-logo {
+  margin-right: 10px;
+  margin-left: 10px;
 }
