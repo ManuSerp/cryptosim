@@ -11,7 +11,7 @@ export default function Home() {
       </Head>
 
       <div class="row">
-        <div id="info-log" class="col-md-6 mx-auto rounded">
+        <div id="info-log" class="col-md-6 mx-auto rounded border border-white">
           <p>
             Check if connected to database:{" "}
             <Link href="/db">
