@@ -18,7 +18,11 @@ a {
 }
 
 div {
+  background-color: rgb(3, 2, 31);
+  color: rgb(126, 30, 46);
 }
-#test {
-  background-color: aqua;
+#info-log {
+  background-color: rgb(7, 5, 54);
+  margin-top: 20vh;
+  min-height: 40vh;
 }

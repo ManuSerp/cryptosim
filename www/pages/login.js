@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import NewForm from "./components/NewForm";
 
 export default function Home() {
   return (
@@ -9,25 +10,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="container-fluid">
-        <div id="test" className="d-flex flex-row">
+      <div class="row">
+        <div id="info-log" class="col-md-6 mx-auto rounded">
           <p>
             Check if connected to database:{" "}
             <Link href="/db">
               <a>Here!</a>
             </Link>
-          </p>
-        </div>
-
-        <div className="d-flex flex-row">
-          <div className="p-2">Flex item 1</div>
-          <div className="p-2">Flex item 2</div>
-          <div className="p-2">Flex item 3</div>
-        </div>
-        <div className="d-flex flex-row-reverse">
-          <div className="p-2">Flex item 1</div>
-          <div className="p-2">Flex item 2</div>
-          <div className="p-2">Flex item 3</div>
+          </p>{" "}
+          <NewForm></NewForm>
         </div>
       </div>
     </>
