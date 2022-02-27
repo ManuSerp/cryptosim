@@ -1,0 +1,23 @@
+nav {
+  margin: 10px auto 80px;
+  padding: 10px 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  color: #ec83c0;
+}
+nav a {
+  order: 3;
+  margin-left: 12px;
+  color: #ec83c0;
+  font-size: larger;
+}
+nav a .title {
+  order: 2;
+}
+
+nav .logo {
+  margin-right: auto;
+  order: 1;
+}

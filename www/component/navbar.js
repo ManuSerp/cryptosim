@@ -15,7 +15,9 @@ function Navbar() {
       <Link href="/about">
         <a>About</a>
       </Link>
-      <a>Log in</a>
+      <Link href="/login">
+        <a>Login</a>
+      </Link>
       <a> Research</a>
     </nav>
   );

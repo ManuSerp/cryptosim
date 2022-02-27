@@ -1,28 +1,38 @@
-html,
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap");
+
 body {
-  padding: 0;
-  margin: 0;
-  color: rgb(126, 30, 46);
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: rgb(3, 2, 31);
+  background-color: #282a36;
+  font-family: "Nunito";
 }
-
 a {
-  color: blue;
+  color: #333;
   text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-div {
-  background-color: rgb(3, 2, 31);
-  color: rgb(126, 30, 46);
 }
 #info-log {
   background-color: rgb(7, 5, 54);
   margin-top: 20vh;
   min-height: 40vh;
+}
+
+.about {
+  color: #e1ec98;
+}
+
+.content {
+  color: #e1ec98;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.LeaderBoard {
+  border: 1px solid #eaeaea;
+  padding: 30px;
+}
+
+.StockPriceList {
+  flex-grow: 7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
