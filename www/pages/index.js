@@ -1,6 +1,7 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -12,14 +13,8 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to CRYPTOSIM
-        </h1>
-
-        <p className={styles.description}>
-          Il y aura des crypto
-        </p>
-
+        <h1 className={styles.title}>Welcome to CRYPTOSIM</h1>
+        <p className={styles.description}>Il y aura des crypto</p>
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h2>Documentation &rarr;</h2>
@@ -38,9 +33,13 @@ export default function Home() {
             <h2>Cryptosim github &rarr;</h2>
             <p> the github.</p>
           </a>
-
-          
         </div>
+        <p>
+          Login prototype:{" "}
+          <Link href="/login">
+            <a>Here!</a>
+          </Link>
+        </p>{" "}
       </main>
 
       <footer className={styles.footer}>
@@ -49,12 +48,12 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-  )
+  );
 }
