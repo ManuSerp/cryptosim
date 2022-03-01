@@ -1,6 +1,8 @@
 import { MongoClient } from "mongodb";
 
 const uri = process.env.MONGODB_URI;
+
+throw new Error("MONGODB_URI=" + uri);
 console.log(uri);
 const options = {};
 
