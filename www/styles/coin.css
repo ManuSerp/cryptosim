@@ -1,13 +1,13 @@
-.UserLeaderBoard {
+.CoinList {
   text-align: center;
   border: 1px solid black;
   border-radius: 8px;
-  margin: 2px;
+  margin: 10px;
 }
 
-.LeaderBoard {
+.CoinPrice {
+  text-align: center;
   border: 1px solid black;
   border-radius: 8px;
   margin: 10px;
-  padding: 30px;
 }
