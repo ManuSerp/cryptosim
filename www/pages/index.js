@@ -1,3 +1,4 @@
+import Balance from "../components/balance";
 import LeaderBoard from "../components/leaderboard";
 import StockPriceList from "../components/stockpricelist";
 
@@ -6,17 +7,11 @@ export default function Home() {
     <div className="content">
       <div className="index-wrapper">
         <div className="index-left">
-          <LeaderBoard />
-          <div>
-            adghazuijdizakdopakzopdkoakdopakzdopakdoda
-            adghazuijdizakdopakzopdkoakdopakzdopakdoda
-            adghazuijdizakdopakzopdkoakdopakzdopakdoda
-            adghazuijdizakdopakzopdkoakdopakzdopakdoda
-            adghazuijdizakdopakzopdkoakdopakzdopakdodaadghazuijdizakdopakzopdkoakdopakzdopakdoda
-            adghazuijdizakdopakzopdkoakdopakzdopakdodaadghazuijdizakdopakzopdkoakdopakzdopakdodaadghazuijdizakdopakzopdkoakdopakzdopakdoda
-            vadghazuijdizakdopakzopdkoakdopakzdopakdoda v v
-            vvadghazuijdizakdopakzopdkoakdopakzdopakdodaadghazuijdizakdopakzopdkoakdopakzdopakdodaadghazuijdizakdopakzopdkoakdopakzdopakdodaadghazuijdizakdopakzopdkoakdopakzdopakdoda
-            adghazuijdizakdopakzopdkoakdopakzdopakdodaadghazuijdizakdopakzopdkoakdopakzdopakdodaadghazuijdizakdopakzopdkoakdopakzdopakdoda
+          <div className="index-left-row-1">
+            <Balance />
+          </div>
+          <div className="index-left-row-2">
+            <LeaderBoard />
           </div>
         </div>
         <div className="index-right">

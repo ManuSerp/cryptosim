@@ -12,12 +12,25 @@
 .index-left {
   grid-area: left;
   background-color: red;
+  display: grid;
+  grid-template-areas:
+    "1"
+    "2";
 }
 
 .index-right {
-  grid-column: right;
+  grid-area: right;
   background-color: blue;
 }
+
+.index-left-row-1 {
+  grid-area: 1;
+}
+
+.index-left-row-2 {
+  grid-area: 2;
+}
+
 .LeaderBoard {
   border: 1px solid #eaeaea;
   padding: 30px;
