@@ -58,6 +58,7 @@ function LoginForm() {
         console.log(result);
       } catch (error) {
         console.log(error);
+        alert(error);
       }
     }
   }
