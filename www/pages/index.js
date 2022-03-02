@@ -1,6 +1,6 @@
 import Balance from "../components/balance";
 import LeaderBoard from "../components/leaderboard";
-import StockPriceList from "../components/stockpricelist";
+import CoinList from "../components/coinlist";
 
 export default function Home() {
   return (
@@ -15,7 +15,10 @@ export default function Home() {
           </div>
         </div>
         <div className="index-right">
-          <StockPriceList />
+          <div className="index-right-col-left">
+            <CoinList />
+          </div>
+          <div className="index-right-col-right"></div>
         </div>
       </div>
     </div>
