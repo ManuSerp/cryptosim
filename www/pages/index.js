@@ -1,3 +1,4 @@
+
 import LeaderBoard from "../component/leaderboard";
 import StockPriceList from "../component/stockpricelist";
 
