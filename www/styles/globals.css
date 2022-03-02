@@ -1,12 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap");
 
-html,
-div .body {
-  background-color: #282a36;
-  color: #e1ec98;
-  font-family: "Nunito";
-}
-
 #info-log {
   background-color: rgb(7, 5, 54);
   margin-top: 20vh;
