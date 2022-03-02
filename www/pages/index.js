@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
+import StatusWidget from "../components/auth/StatusWidget";
 
 export default function Home() {
   return (
@@ -34,12 +35,7 @@ export default function Home() {
             <p> the github.</p>
           </a>
         </div>
-        <p>
-          Login prototype:{" "}
-          <Link href="/account/login">
-            <a>Here!</a>
-          </Link>
-        </p>{" "}
+        <StatusWidget></StatusWidget>
       </main>
 
       <footer className={styles.footer}>
