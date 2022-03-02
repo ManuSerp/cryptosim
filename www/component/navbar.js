@@ -10,7 +10,7 @@ function Navbar() {
         </a>
       </Link>
       <Link href="/">
-        <a className="title">Cryptosim</a>
+        <a className="title">Cryptosim </a>
       </Link>
       <Link href="/about">
         <a>About</a>
