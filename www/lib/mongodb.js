@@ -1,7 +1,9 @@
 import { MongoClient } from "mongodb";
 
-const uri =
-  "mongodb+srv://cryptoadmin:Boulzer54@cluster0.0c4nq.mongodb.net/cryptosim?retryWrites=true&w=majority";
+const uri = process.env.MONGODB_URI;
+
+//throw new Error("MONGODB_URI=" + uri);
+console.log(uri);
 const options = {};
 
 let client;

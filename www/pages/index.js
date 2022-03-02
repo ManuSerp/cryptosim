@@ -3,6 +3,7 @@ import LeaderBoard from "../components/leaderboard";
 import StockPriceList from "../components/stockpricelist";
 import Wallet from "../components/wallet";
 
+
 export default function Home() {
   return (
     <div className="content">
