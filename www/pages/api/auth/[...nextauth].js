@@ -1,6 +1,5 @@
 import NextAuth from "next-auth";
 import Providers from "next-auth/providers";
-import { MongoClient } from "mongodb";
 import { compare } from "bcryptjs";
 import clientPromise from "../../../lib/mongodb";
 
