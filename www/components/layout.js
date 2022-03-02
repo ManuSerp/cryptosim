@@ -7,6 +7,7 @@ function Layout({ children }) {
       <head>
         <title>Cryptosim</title>
       </head>
+
       <div className="layout-body">
         <div className="layout-wrapper">
           <div className="layout-row-1">
@@ -14,6 +15,7 @@ function Layout({ children }) {
           </div>
           <div className="layout-row-2">{children}</div>
         </div>
+
         <Footer />
       </div>
     </div>

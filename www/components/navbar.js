@@ -11,6 +11,7 @@ function Navbar() {
       </Link>
       <Link href="/">
         <a className="nav-title">Cryptosim </a>
+
       </Link>
       <Link href="/about">
         <a className="nav-about">About</a>
