@@ -1,11 +1,19 @@
-import { useSession } from "next-auth/client";
+import Link from "next/link";
+import { useSession, signOut } from "next-auth/react";
+
 function MainNavigation() {
-  const [session, loading] = useSession();
+  const { data: session, status } = useSession();
+  const loading = status === "loading";
+
+  function logoutHandler() {
+    signOut();
+  }
+
   return (
-    <header className={classes.header}>
+    <header>
       <Link href="/">
         <a>
-          <div className={classes.logo}>Next Auth</div>
+          <div>Next Auth</div>
         </a>
       </Link>
       <nav>
@@ -22,7 +30,7 @@ function MainNavigation() {
           )}
           {session && (
             <li>
-              <button>Logout</button>
+              <button onClick={logoutHandler}>Logout</button>
             </li>
           )}
         </ul>

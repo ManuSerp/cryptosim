@@ -1,5 +1,6 @@
 import NextAuth from "next-auth";
-import Providers from "next-auth/providers";
+
+import CredentialsProvider from "next-auth/providers/credentials";
 import { compare } from "bcryptjs";
 import clientPromise from "../../../lib/mongodb";
 
@@ -10,7 +11,7 @@ export default NextAuth({
   },
   //Specify Providers
   providers: [
-    Providers.Credentials({
+    CredentialsProvider({
       async authorize(credentials) {
         //Connect to DB
         const client = await clientPromise;
