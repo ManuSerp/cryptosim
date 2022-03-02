@@ -1,26 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap");
+
 html,
-body {
-  padding: 0;
-  margin: 0;
-  color: rgb(126, 30, 46);
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: rgb(3, 2, 31);
+div .body {
+  background-color: #282a36;
+  color: #e1ec98;
+  font-family: "Nunito";
 }
 
-a {
-  color: blue;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-div {
-  background-color: rgb(3, 2, 31);
-  color: rgb(126, 30, 46);
-}
 #info-log {
   background-color: rgb(7, 5, 54);
   margin-top: 20vh;
