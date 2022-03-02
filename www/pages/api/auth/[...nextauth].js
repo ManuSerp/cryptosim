@@ -23,18 +23,18 @@ export default NextAuth({
         });
         //Not found - send error res
         if (!result) {
-          client.close();
+          //client.close();
           throw new Error("No user found with the pseudo");
         }
         //Check hashed password with DB password
         const checkPassword = await compare(credentials.password, result.pwd);
         //Incorrect password - send response
         if (!checkPassword) {
-          client.close();
+          //client.close();
           throw new Error("Password doesnt match");
         }
         //Else send success response
-        client.close();
+        //client.close();
         return { pseudo: result.pseudo };
       },
     }),
