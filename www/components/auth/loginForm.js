@@ -49,6 +49,8 @@ function LoginForm() {
       if (!result.error) {
         // set some auth state
         router.replace("/account/main"); //send to profile here
+      } else {
+        router.replace("/index");
       }
     } else {
       try {
