@@ -1,0 +1,12 @@
+.UserLeaderBoard {
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 8px;
+  margin: 2px;
+}
+
+.LeaderBoard {
+  border: 1px solid black;
+  border-radius: 8px;
+  margin: 5px;
+}

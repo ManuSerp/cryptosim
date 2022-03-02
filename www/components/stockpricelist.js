@@ -4,6 +4,76 @@ export default function StockPriceList() {
       <p>Stock Price :</p>
       <p>BTC</p>
       <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
+      <p>ETH</p>
     </div>
   );
 }

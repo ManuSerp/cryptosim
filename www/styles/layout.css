@@ -1,7 +1,4 @@
 div .layout-body {
-  overflow-y: scroll;
-  scrollbar-color: rebeccapurple green;
-  scrollbar-width: thin;
   min-height: 100%;
   background-color: #282a36;
   color: #e1ec98;
@@ -10,7 +7,7 @@ div .layout-body {
 
 div .layout-wrapper {
   display: grid;
-  grid-template-rows: 10% 90%;
+  grid-template-rows: 10vh;
   grid-template-areas:
     "nav"
     "main";
