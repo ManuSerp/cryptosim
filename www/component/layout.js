@@ -7,11 +7,11 @@ function Layout({ children }) {
       <head>
         <title>Cryptosim</title>
       </head>
-      <body>
+      <div className="body">
         <Navbar />
         {children}
         <Footer />
-      </body>
+      </div>
     </div>
   );
 }
