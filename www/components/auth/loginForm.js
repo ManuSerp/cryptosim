@@ -50,7 +50,7 @@ function LoginForm() {
         // set some auth state
         router.replace("/account/main"); //send to profile here
       } else {
-        router.replace("/index");
+        alert(result.error);
       }
     } else {
       try {
