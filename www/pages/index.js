@@ -36,7 +36,7 @@ export default function Home() {
         </div>
         <p>
           Login prototype:{" "}
-          <Link href="/login">
+          <Link href="/account/login">
             <a>Here!</a>
           </Link>
         </p>{" "}
