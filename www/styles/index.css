@@ -15,7 +15,8 @@
   display: grid;
   grid-template-areas:
     "1"
-    "2";
+    "2"
+    "3";
 }
 
 .index-right {
@@ -29,6 +30,9 @@
 
 .index-left-row-2 {
   grid-area: 2;
+}
+.index-left-row-3 {
+  grid-area: 3;
 }
 
 .LeaderBoard {

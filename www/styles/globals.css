@@ -4,6 +4,7 @@
 @import url("layout.css");
 @import url("leaderboard.css");
 @import url("navbar.css");
+@import url("wallet.css");
 
 #info-log {
   background-color: rgb(7, 5, 54);

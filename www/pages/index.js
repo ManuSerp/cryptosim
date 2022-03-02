@@ -1,6 +1,7 @@
 import Balance from "../components/balance";
 import LeaderBoard from "../components/leaderboard";
 import StockPriceList from "../components/stockpricelist";
+import Wallet from "../components/wallet";
 
 export default function Home() {
   return (
@@ -8,9 +9,12 @@ export default function Home() {
       <div className="index-wrapper">
         <div className="index-left">
           <div className="index-left-row-1">
-            <Balance />
+            <Wallet />
           </div>
           <div className="index-left-row-2">
+            <Balance />
+          </div>
+          <div className="index-left-row-3">
             <LeaderBoard />
           </div>
         </div>
