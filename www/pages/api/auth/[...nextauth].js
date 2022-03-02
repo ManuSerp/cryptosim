@@ -26,7 +26,7 @@ export default NextAuth({
           throw new Error("No user found with the pseudo");
         }
         //Check hashed password with DB password
-        const checkPassword = await compare(credentials.passowrd, result.pwd);
+        const checkPassword = await compare(credentials.password, result.pwd);
         //Incorrect password - send response
         if (!checkPassword) {
           client.close();
