@@ -11,3 +11,61 @@ body {
   margin-top: 20vh;
   min-height: 40vh;
 }
+nav {
+  margin: 10px auto 80px;
+  padding: 10px 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+nav a {
+  color: #ec83c0;
+  font-size: larger;
+  margin: 5px;
+}
+
+.nav-title {
+  flex-basis: 90%;
+}
+
+.nav-logo {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.LeaderBoard {
+  border: 1px solid #eaeaea;
+  padding: 30px;
+}
+
+.StockPriceList {
+  flex-grow: 7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.LeaderBoard {
+  border: 1px solid #eaeaea;
+  padding: 30px;
+}
+
+.StockPriceList {
+  flex-grow: 7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
