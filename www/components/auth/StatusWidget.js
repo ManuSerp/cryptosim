@@ -20,7 +20,7 @@ function StatusWidget() {
 
       {session && (
         <a>
-          <button onClick={logoutHandler}>Logout</button> {session}
+          <button onClick={logoutHandler}>Logout</button> {session.user.pseudo}
         </a>
       )}
     </>
