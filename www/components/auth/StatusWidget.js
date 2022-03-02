@@ -10,13 +10,20 @@ function StatusWidget() {
   }
 
   return (
-    <div>
-      {loading && <p>LOADING...</p>}
-      {!session && !loading && <Link href="/auth">Login</Link>}
-      {!session && !loading && <p>Anonymous</p>}
-      {session && <button onClick={logoutHandler}>Logout</button>}
-      {session && <p>pseudo</p>}
-    </div>
+    <>
+      {loading && <a>LOADING...</a>}
+      {!session && !loading && (
+        <a>
+          <Link href="/auth">Login </Link>Anonymous
+        </a>
+      )}
+
+      {session && (
+        <a>
+          <button onClick={logoutHandler}>Logout</button> pseudo{" "}
+        </a>
+      )}
+    </>
   );
 }
 
