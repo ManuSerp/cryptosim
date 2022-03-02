@@ -1,15 +1,9 @@
 import Balance from "../components/balance";
 import LeaderBoard from "../components/leaderboard";
 
-
 import CoinList from "../components/coinlist";
 
-
-import StockPriceList from "../components/stockpricelist";
 import Wallet from "../components/wallet";
-
-
-
 
 export default function Home() {
   return (
