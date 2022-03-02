@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { getSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 
-//import AuthForm from "../components/auth/auth-form";
+import LoginForm from "../components/auth/loginForm";
 
 function AuthPage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -24,7 +24,8 @@ function AuthPage() {
 
   return (
     <div>
-      <p>AUTH PAGE</p>
+      <p>form</p>
+      <LoginForm />
     </div>
   );
 }
