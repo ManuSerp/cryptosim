@@ -8,7 +8,7 @@ export default NextAuth({
   session: {
     jwt: true,
   },
-  //Specify Provider
+  //Specify Providers
   providers: [
     Providers.Credentials({
       async authorize(credentials) {
