@@ -35,7 +35,7 @@ export default NextAuth({
         }
         //Else send success response
         //client.close();
-        return { pseudo: result.psd };
+        return { name: result.psd };
       },
     }),
   ],
