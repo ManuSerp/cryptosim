@@ -18,6 +18,11 @@ function MainNavigation() {
       </Link>
       <nav>
         <ul>
+          {loading && (
+            <li>
+              <p>LOADING...</p>
+            </li>
+          )}
           {!session && !loading && (
             <li>
               <Link href="/auth">Login</Link>
