@@ -1,9 +1,8 @@
-export default function UserLeaderBoard({ name, balance }) {
+export default function UserLeaderBoard({ rank, name, balance }) {
   return (
     <div className="UserLeaderBoard">
-      <p>
-        {name} {balance}
-      </p>
+      {rank}. {name} {balance}€
+
     </div>
   );
 }

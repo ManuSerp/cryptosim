@@ -7,9 +7,15 @@ function Layout({ children }) {
       <head>
         <title>Cryptosim</title>
       </head>
-      <div className="body">
-        <Navbar />
-        {children}
+
+      <div className="layout-body">
+        <div className="layout-wrapper">
+          <div className="layout-row-1">
+            <Navbar />
+          </div>
+          <div className="layout-row-2">{children}</div>
+        </div>
+
         <Footer />
       </div>
     </div>

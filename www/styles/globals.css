@@ -1,11 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap");
-
-html,
-div .body {
-  background-color: #282a36;
-  color: #e1ec98;
-  font-family: "Nunito";
-}
+@import url("balance.css");
+@import url("footer.css");
+@import url("index.css");
+@import url("layout.css");
+@import url("leaderboard.css");
+@import url("navbar.css");
+@import url("wallet.css");
 
 #info-log {
   background-color: rgb(7, 5, 54);

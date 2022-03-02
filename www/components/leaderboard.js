@@ -9,7 +9,9 @@ export default function LeaderBoard() {
     <div className="LeaderBoard">
       <p>LeaderBoard :</p>
       {users.map(({ name, balance }, i) => (
-        <UserLeaderBoard key={i} name={name} balance={balance} />
+
+        <UserLeaderBoard key={i} rank={i} name={name} balance={balance} />
+
       ))}
     </div>
   );

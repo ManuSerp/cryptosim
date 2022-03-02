@@ -1,20 +1,16 @@
 nav {
-  margin: 10px auto 80px;
   padding: 10px 0;
   display: flex;
-  justify-content: flex-start;
+
   align-items: center;
   border-bottom: 1px solid #ddd;
+  background-color: green;
 }
 
 nav a {
   color: #ec83c0;
   font-size: larger;
   margin: 5px;
-}
-
-.nav-title {
-  flex-basis: 90%;
 }
 
 .nav-logo {
