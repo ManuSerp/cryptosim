@@ -54,7 +54,7 @@ function LoginForm() {
       }
     } else {
       try {
-        const result = await createUser(enteredpseudo, enteredPassword);
+        const result = await createUser(enteredPseudo, enteredPassword);
         console.log(result);
       } catch (error) {
         console.log(error);
@@ -75,7 +75,6 @@ function LoginForm() {
           <input
             type="password"
             id="password"
-            email
             required
             ref={passwordInputRef}
           />
