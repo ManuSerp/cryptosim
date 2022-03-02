@@ -1,4 +1,4 @@
-import Layout from "../component/layout";
+import Layout from "../components/layout";
 import "../styles/globals.css";
 import "../styles/navbar.css";
 import "../styles/footer.css";
