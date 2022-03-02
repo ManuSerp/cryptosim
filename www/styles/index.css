@@ -22,6 +22,9 @@
 .index-right {
   grid-area: right;
   background-color: blue;
+  display: grid;
+  grid-template-areas: "left right";
+  grid-template-columns: 85% 15%;
 }
 
 .index-left-row-1 {
@@ -35,7 +38,6 @@
   grid-area: 3;
 }
 
-.LeaderBoard {
-  border: 1px solid #eaeaea;
-  padding: 30px;
+.index-right-col-left {
+  grid-area: left;
 }
