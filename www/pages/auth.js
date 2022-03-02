@@ -24,7 +24,6 @@ function AuthPage() {
 
   return (
     <div>
-      <p>form</p>
       <LoginForm />
     </div>
   );

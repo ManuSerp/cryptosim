@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import StatusWidget from "./auth/StatusWidget";
 
 function Navbar() {
   return (
@@ -11,15 +12,13 @@ function Navbar() {
       </Link>
       <Link href="/">
         <a className="nav-title">Cryptosim </a>
-
       </Link>
       <Link href="/about">
         <a className="nav-about">About</a>
       </Link>
-      <Link href="/login">
-        <a className="nav-login">Login</a>
-      </Link>
+
       <a className="nav-search"> Research</a>
+      <StatusWidget />
     </nav>
   );
 }
