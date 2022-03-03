@@ -8,11 +8,7 @@ export default async function handler(req, res) {
     psd: req.query.rte,
   });
 
-  let sess;
-
-  getSession().then((session) => {
-    sess = session;
-  });
+  const sess = await getSession();
 
   if (!rest) {
     res.status(200).json({ error: "no results", query: req.query, JWT: sess });
