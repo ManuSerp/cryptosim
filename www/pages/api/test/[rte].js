@@ -1,10 +1,10 @@
 import { getSession } from "next-auth/react";
 import clientPromise from "../../../lib/mongodb";
 
-export default function handler(req, res) {
-  const client = clientPromise;
-  const users = client.db().collection("user_id");
-  const rest = users.findOne({
+export default async function handler(req, res) {
+  const client = await clientPromise;
+  const users = await client.db().collection("user_id");
+  const rest = await users.findOne({
     psd: req.query,
   });
 
