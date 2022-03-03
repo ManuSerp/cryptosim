@@ -5,7 +5,7 @@ export default async function handler(req, res) {
   const client = await clientPromise;
   const users = await client.db().collection("user_id");
   const rest = await users.findOne({
-    psd: req.query,
+    psd: req.query.rte,
   });
 
   let sess;
