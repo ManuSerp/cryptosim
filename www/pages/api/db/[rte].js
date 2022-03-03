@@ -15,7 +15,7 @@ export default async function handler(req, res) {
   });
 
   if (!rest) {
-    res.status(200).json({ error: "no results", query: req.query });
+    res.status(200).json({ error: "no results", query: req.query, JWT: sess });
   } else {
     res.status(200).json(rest);
   }
