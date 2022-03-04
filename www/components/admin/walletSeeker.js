@@ -20,6 +20,7 @@ async function searchWallet(pseudo) {
 }
 
 function WalletSeeker() {
+  const [resEnd, setRes] = useState();
   const pseudoInputRef = useRef();
 
   async function submitHandler(event) {
@@ -30,12 +31,12 @@ function WalletSeeker() {
     // optional: Add validation
 
     try {
-      const result = await searchWallet(enteredPseudo);
-      console.log(result);
-      alert(result);
+      const result_q = await searchWallet(enteredPseudo);
+      setRes(result_q.psd + ": " + JSON.stringify(result_q.coins));
+      //alert(result_q.coins.eur);
     } catch (error) {
       console.log(error);
-      alert(error);
+      setRes("ERROR PROBABLY NO USER");
     }
   }
 
@@ -51,6 +52,7 @@ function WalletSeeker() {
           <button>look</button>
         </div>
       </form>
+      <div>{resEnd}</div>
     </section>
   );
 }
