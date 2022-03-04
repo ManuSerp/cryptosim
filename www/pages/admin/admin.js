@@ -1,15 +1,17 @@
 import { getSession } from "next-auth/react";
 
-import UserProfile from "../components/profile/user-profile";
-
-function ProfilePage() {
-  return <UserProfile />;
+function AdminPage() {
+  return (
+    <>
+      <div>ADMIN PAGE</div>
+    </>
+  );
 }
 
 export async function getServerSideProps(context) {
   const session = await getSession({ req: context.req });
 
-  if (!session) {
+  if (!session || session.user.name !== "admin") {
     return {
       redirect: {
         destination: "/auth",
@@ -23,4 +25,4 @@ export async function getServerSideProps(context) {
   };
 }
 
-export default ProfilePage;
+export default AdminPage;
