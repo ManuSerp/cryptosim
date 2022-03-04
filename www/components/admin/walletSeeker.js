@@ -32,7 +32,7 @@ function WalletSeeker() {
     try {
       const result = await searchWallet(enteredPseudo);
       console.log(result);
-      alert(result.json());
+      alert(result);
     } catch (error) {
       console.log(error);
       alert(error);
