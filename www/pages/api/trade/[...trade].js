@@ -31,17 +31,12 @@ export default async function handler(req, res) {
 
   if (result.coins[from] && result.coins[from] >= value_to_pay) {
     //a implanter la création de la transaction
-    let set1 = { coins: {} };
-    let set2 = { coins: {} };
 
-    set1.coins[from] = result.coins[from] - value_to_pay;
-    set2.coins[req.query.trade[0]] = req.query.trade[2];
+    result.coins[from] = result.coins[from] - value_to_pay;
+    result.coins[req.query.trade[0]] = req.query.trade[2];
 
     const flag_update = await wlt.updateOne(result, {
-      $set: set1,
-    });
-    const flag_update2 = await wlt.updateOne(result, {
-      $set: set2,
+      $set: result,
     });
 
     //
