@@ -23,7 +23,7 @@ export default async function handler(req, res) {
   //check price
 
   const price = await fetch(
-    "http://localhost:3000/api/crypto/" + symbols[req.query.trade[0]]
+    process.env.ABS_URL + "/api/crypto/" + symbols[req.query.trade[0]]
   );
 
   if (!price) {
