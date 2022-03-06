@@ -18,7 +18,7 @@ export default async function handler(req, res) {
   let result = await wlt.findOne({ psd: sess.user.name });
 
   if (!result) {
-    return res.status(500).end();
+    return res.status(501).end();
   }
   //check price
 
@@ -27,7 +27,7 @@ export default async function handler(req, res) {
   );
 
   if (!price) {
-    res.status(500).end();
+    res.status(502).end();
   }
 
   const json = await price.json();
