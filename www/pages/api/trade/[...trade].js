@@ -6,7 +6,7 @@ const symbols = require("../../../data/symbols.json");
 //structure of the request: achat/from/volume
 //achat: symbols
 //from: symbol
-//ex: /bitcoin/usd/5
+//ex: /btc/usd/5
 
 export default async function handler(req, res) {
   const sess = await getSession({ req });
@@ -36,7 +36,7 @@ export default async function handler(req, res) {
   let value_to_pay = json[from] * req.query.trade[2];
 
   if (result[from] && result[from] >= value_to_pay) {
-    //a implanter la création de la transaction
+    //a implanter la création de l'historique
 
     let coins_after = result[from] - value_to_pay;
     let new_coins = req.query.trade[2];
@@ -49,8 +49,7 @@ export default async function handler(req, res) {
     } else {
       pipe[req.query.trade[0]] =
         parseFloat(new_coins) + result[req.query.trade[0]];
-    } //+ result[req.query.trade[0]];
-
+    }
     const flag_update = await wlt.updateOne(
       { psd: sess.user.name },
       {
