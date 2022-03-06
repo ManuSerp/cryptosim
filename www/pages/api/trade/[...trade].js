@@ -8,6 +8,21 @@ const symbols = require("../../../data/symbols.json");
 //from: symbol
 //ex: /btc/usd/5
 
+async function createHisto(pseudo, c1, c2, amount1, amount2, date_u, client) {
+  const histo = await client.db().collection("historique");
+
+  let js = {
+    pseudo: pseudo,
+    achat: c1,
+    vente: c2,
+    q1: amount1,
+    q2: amount2,
+    date: date_u,
+  };
+
+  let result = await histo.insertOne(js);
+}
+
 export default async function handler(req, res) {
   const sess = await getSession({ req });
   //db
@@ -57,7 +72,19 @@ export default async function handler(req, res) {
       }
     );
     //
+    // historique:
 
+    let ms = Date.now();
+    let h = await createHisto(
+      sess.user.name,
+      req.query.trade[0],
+      from,
+      new_coins,
+      value_to_pay,
+      ms,
+      client
+    );
+    //
     res.status(200).json(pipe);
   } else {
     res.status(200).json({ error: "not coins enough" });
