@@ -55,7 +55,7 @@ function LoginForm() {
     } else {
       try {
         const result = await createUser(enteredPseudo, enteredPassword);
-        console.log(result);
+        alert(result);
       } catch (error) {
         console.log(error);
         alert(error);
