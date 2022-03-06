@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap");
+
+.index-wrapper {
+  display: grid;
+  grid-template-areas: "left right";
+  grid-template-columns: 25vw 75vw;
+  background-color: #282a36;
+  color: #e1ec98;
+  font-family: "Nunito";
+}
+
+.index-left {
+  grid-area: left;
+  background-color: red;
+  display: grid;
+  grid-template-areas:
+    "1"
+    "2"
+    "3";
+}
+
+.index-right {
+  grid-area: right;
+  background-color: blue;
+  display: grid;
+  grid-template-areas: "left right";
+  grid-template-columns: 85% 15%;
+}
+
+.index-left-row-1 {
+  grid-area: 1;
+}
+
+.index-left-row-2 {
+  grid-area: 2;
+}
+.index-left-row-3 {
+  grid-area: 3;
+}
+
+.index-right-col-left {
+  grid-area: left;
+}
