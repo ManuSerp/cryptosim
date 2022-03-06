@@ -9,6 +9,6 @@ export default async function handler(req, res) {
     let json = await response.json();
     res.status(200).json(json.market_data.current_price);
   } else {
-    res.status(200).json(response.ok);
+    res.status(500).end();
   }
 }

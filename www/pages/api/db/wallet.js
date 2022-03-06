@@ -1,4 +1,5 @@
 import clientPromise from "../../../lib/mongodb";
+const symbols = require("../../../data/symbols.json");
 
 export default async function handler(req, res) {
   const client = await clientPromise;
@@ -13,5 +14,26 @@ export default async function handler(req, res) {
     psd: body.pseudo,
   });
 
-  res.status(200).json(result);
+  let actif = [];
+
+  for (let key in result) {
+    if (key !== "psd" && key !== "_id") {
+      let value = result[key];
+      let price = await fetch(
+        process.env.ABS_URL + "/api/crypto/" + symbols[key]
+      );
+      let json = await price.json();
+
+      value = value * json["usd"];
+      actif.push(value);
+    }
+  }
+
+  const sumActif = actif.reduce(
+    (previousValue, currentValue) => previousValue + currentValue,
+    0
+  );
+
+  let reponse = { wlt: result, total: sumActif };
+  res.status(200).json(reponse);
 }

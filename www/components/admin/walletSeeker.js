@@ -32,7 +32,7 @@ function WalletSeeker() {
 
     try {
       const result_q = await searchWallet(enteredPseudo);
-      setRes(result_q.psd + ": " + JSON.stringify(result_q.coins));
+      setRes(JSON.stringify(result_q));
       //alert(result_q.coins.eur);
     } catch (error) {
       console.log(error);
