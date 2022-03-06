@@ -1,8 +1,10 @@
 import { getSession } from "next-auth/react";
 import clientPromise from "../../../lib/mongodb";
 
+const symbols = require("../../../data/symbols.json");
+
 //structure of the request: achat/from/volume
-//achat:id
+//achat: symbols
 //from: symbol
 //ex: /bitcoin/usd/5
 
@@ -21,8 +23,12 @@ export default async function handler(req, res) {
   //check price
 
   const price = await fetch(
-    "http://localhost:3000/api/crypto/" + req.query.trade[0]
+    "http://localhost:3000/api/crypto/" + symbols[req.query.trade[0]]
   );
+
+  if (!price) {
+    res.status(500).end();
+  }
 
   const json = await price.json();
   let from = req.query.trade[1];
@@ -37,8 +43,13 @@ export default async function handler(req, res) {
 
     let pipe = {};
     pipe[from] = coins_after;
-    pipe[req.query.trade[0]] =
-      parseFloat(new_coins) + result[req.query.trade[0]];
+
+    if (!result[req.query.trade[0]]) {
+      pipe[req.query.trade[0]] = parseFloat(new_coins);
+    } else {
+      pipe[req.query.trade[0]] =
+        parseFloat(new_coins) + result[req.query.trade[0]];
+    } //+ result[req.query.trade[0]];
 
     const flag_update = await wlt.updateOne(
       { psd: sess.user.name },
