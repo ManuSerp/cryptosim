@@ -29,19 +29,26 @@ export default async function handler(req, res) {
 
   let value_to_pay = json[from] * req.query.trade[2];
 
-  if (result.coins[from] && result.coins[from] >= value_to_pay) {
+  if (result[from] && result[from] >= value_to_pay) {
     //a implanter la création de la transaction
 
-    result.coins[from] = result.coins[from] - value_to_pay;
-    result.coins[req.query.trade[0]] = req.query.trade[2];
+    let coins_after = result[from] - value_to_pay;
+    let new_coins = req.query.trade[2];
 
-    const flag_update = await wlt.updateOne(result, {
-      $set: result,
-    });
+    let pipe = {};
+    pipe[from] = coins_after;
+    pipe[req.query.trade[0]] =
+      parseFloat(new_coins) + result[req.query.trade[0]];
 
+    const flag_update = await wlt.updateOne(
+      { psd: sess.user.name },
+      {
+        $set: pipe,
+      }
+    );
     //
 
-    res.status(200).json(result.coins[from]);
+    res.status(200).json(pipe);
   }
 
   res.status(200).json({ error: "not coins enough" });
