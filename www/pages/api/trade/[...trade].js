@@ -59,7 +59,7 @@ export default async function handler(req, res) {
     //
 
     res.status(200).json(pipe);
+  } else {
+    res.status(200).json({ error: "not coins enough" });
   }
-
-  res.status(200).json({ error: "not coins enough" });
 }
