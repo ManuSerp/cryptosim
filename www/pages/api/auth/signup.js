@@ -23,10 +23,13 @@ async function handler(req, res) {
             return;
         }
         //Hash password
-        const status = await db.collection('user_id').insertOne({
+        const status = (await db.collection('user_id').insertOne({
             psd: pseudo,
             pwd: await hash(password, 12),
-        });
+        }))&&(await db.collection('wallet').insertOne({
+            psd: pseudo,
+            usd: 2000,
+        }));
         //Send success response
         res.status(201).json({ message: 'User created', ...status });
     } else {
