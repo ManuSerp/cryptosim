@@ -36,7 +36,6 @@ function WalletSeeker() {
       //alert(result_q.coins.eur);
     } catch (error) {
       console.log(error);
-      alert(error);
       setRes("ERROR PROBABLY NO USER");
     }
   }
