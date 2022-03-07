@@ -18,8 +18,7 @@ export default function CoinPrice({ name, value }) {
             name="quantite"
             id="quantite"
             placeholder="Amount to trade"
-            size="30"
-            maxlength="10"
+            size="80%"
           />
         </form>
         <Buy />
