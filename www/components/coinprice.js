@@ -1,7 +1,7 @@
 export default function CoinPrice({ name, value }) {
   return (
     <div className="CoinPrice">
-      {name} {value}$
+      {name} {value} $
     </div>
   );
 }
