@@ -48,14 +48,14 @@ function LoginForm() {
 
       if (!result.error) {
         // set some auth state
-        router.replace("/account/main"); //send to profile here
+        router.replace("/"); //send to profile here
       } else {
         alert(result.error);
       }
     } else {
       try {
         const result = await createUser(enteredPseudo, enteredPassword);
-        console.log(result);
+        alert("account created");
       } catch (error) {
         console.log(error);
         alert(error);
