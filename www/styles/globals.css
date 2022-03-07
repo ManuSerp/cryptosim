@@ -6,6 +6,7 @@
 @import url("navbar.css");
 @import url("coin.css");
 @import url("wallet.css");
+@import url("buy.css");
 
 #info-log {
   background-color: rgb(7, 5, 54);

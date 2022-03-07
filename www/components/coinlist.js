@@ -5,6 +5,9 @@ const coinlistjson = {
   btc: "bitcoin",
   eth: "ethereum",
   usd: "uniswap-state-dollar",
+  usdt: "tether",
+  bnb: "binancecoin",
+  xrp: "ripple",
 };
 const coinlist = [];
 for (var c in coinlistjson) {
