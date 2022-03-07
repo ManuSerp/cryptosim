@@ -85,7 +85,11 @@ export default async function handler(req, res) {
       client
     );
     //
-    res.status(200).json(pipe);
+    let pipeRep = {};
+    pipeRep[from] = value_to_pay;
+    pipeRep[req.query.trade[0]] = parseFloat(new_coins);
+
+    res.status(200).json(pipeRep);
   } else {
     res.status(200).json({ error: "not coins enough" });
   }
