@@ -46,7 +46,7 @@ export default async function handler(req, res) {
   for (let i = 0; i < result.length; i++) {
     if (result[i].psd != "admin") {
       try {
-        let result_q = await searchWallet(element.psd);
+        let result_q = await searchWallet(result[i].psd);
         console.log(result_q);
         let score = result_q.total;
         let pipe = { psd: result[i].psd, score: score };
