@@ -56,10 +56,10 @@ export default async function handler(req, res) {
           },
           { upsert: true }
         );
-        return flag_update;
+        return "test1";
       } catch (error) {
         console.log(error);
-        return error;
+        return "test2";
       }
     }
   });
