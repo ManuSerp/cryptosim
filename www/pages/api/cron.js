@@ -43,7 +43,7 @@ export default async function handler(req, res) {
   const client = await clientPromise;
 
   const lb = await client.db().collection("leaderboard");
-  let result = searchWallet();
+  let result = await searchWallet();
 
   for (let i = 0; i < result.length; i++) {
     const flag_update = await lb.updateOne(
