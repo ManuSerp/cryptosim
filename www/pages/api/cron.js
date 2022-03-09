@@ -15,14 +15,16 @@ export async function searchWallet() {
       if (key !== "psd" && key !== "_id") {
         let value = result[i][key];
 
-        let url = "https://api.coingecko.com/api/v3/coins/" + symbols[key];
+        if (key !== "usd") {
+          let url = "https://api.coingecko.com/api/v3/coins/" + symbols[key];
 
-        let response = await fetch(url);
-        let json = await response.json();
+          let response = await fetch(url);
+          let json = await response.json();
 
-        json = json.market_data.current_price;
+          json = json.market_data.current_price;
 
-        value = value * json.usd;
+          value = value * json.usd;
+        }
         actif.push(value);
       }
     }
