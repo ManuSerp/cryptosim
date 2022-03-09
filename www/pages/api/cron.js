@@ -41,6 +41,7 @@ export default async function handler(req, res) {
   const user = await client.db().collection("user_id");
 
   let result = await user.find({}).toArray();
+  let tab = [];
   //enumerate user, avoid admin, get wallet, update leaderboard (avec le truc pour que ça crée) et c(est fini)
   result.forEach(async (element) => {
     if (element.psd != "admin") {
@@ -56,6 +57,7 @@ export default async function handler(req, res) {
           },
           { upsert: true }
         );
+        tab.push(flag_update);
       } catch (error) {
         console.log(error);
       }
