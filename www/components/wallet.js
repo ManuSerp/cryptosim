@@ -50,16 +50,12 @@ async function searchWallet(pseudo) {
   });
   const data = await response.json();
 
-  if (!response.ok) {
-    password;
-    throw new Error(data.message || "Something went wrong!");
-  }
   return data;
-}
+};
 
 const showWalletContent = (coin,amount,pseudo) => {
     const { data, error } = useSWR("/api/db/wallet" + coin, searchWallet(pseudo), {
-      refreshInterval: 10000,
+      refreshInterval: 1000,
     });
   
     if (error) {
@@ -82,7 +78,6 @@ export default function Wallet() {
             Mon Wallet
         </div>
         <div className="wallet-layout-row-2">
-            <p>Valeurs</p>
             {WalletInfo.map(({ coin, amount }) => (
                 showWalletContent(coin,amount)
             ))}
