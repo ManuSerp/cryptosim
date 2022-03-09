@@ -55,5 +55,5 @@ export default async function handler(req, res) {
     );
   }
 
-  res.status(500).json({ msg: "ca tourne" });
+  res.status(500).json(result);
 }
