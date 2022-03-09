@@ -65,7 +65,8 @@ const showWalletContent = (coin,amount,pseudo) => {
     if (!data) {
       return <div>loading...</div>;
     }
-    return <CoinCard coin={coin} amount={data.usd} />;
+    return <><div>coins
+      </div><CoinCard coin={coin} amount={data.usd} /></>;
   };
 
 export default function Wallet() {
@@ -86,4 +87,5 @@ export default function Wallet() {
     </div>
     )
   }
+
   
