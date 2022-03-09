@@ -1,71 +1,59 @@
 import clientPromise from "../../lib/mongodb";
 const symbols = require("../../data/symbols.json");
 
-export async function searchWallet(pseudo) {
+export async function searchWallet() {
   const client = await clientPromise;
   const wallets = await client.db().collection("wallet");
 
-  const result = await wallets.findOne({
-    psd: pseudo,
-  });
+  let result = await wallets.find({}).toArray();
+  let end = [];
 
-  let actif = [];
+  for (let i = 0; i < result.length; i++) {
+    let actif = [];
 
-  for (let key in result) {
-    if (key !== "psd" && key !== "_id") {
-      let value = result[key];
-      let price = await fetch(
-        process.env.ABS_URL + "/api/crypto/" + symbols[key]
-      );
-      let json = await price.json();
+    for (let key in result[i]) {
+      if (key !== "psd" && key !== "_id") {
+        let value = result[key];
 
-      value = value * json["usd"];
-      actif.push(value);
+        let url = "https://api.coingecko.com/api/v3/coins/" + symbols[key];
+
+        let response = await fetch(url);
+        let json = await response.json();
+
+        json = json.market_data.current_price;
+
+        value = value * json["usd"];
+        actif.push(value);
+      }
     }
+
+    const sumActif = actif.reduce(
+      (previousValue, currentValue) => previousValue + currentValue,
+      0
+    );
+    let pipe = { psd: result[i].psd, score: sumActif };
+    end.push(pipe);
   }
 
-  const sumActif = actif.reduce(
-    (previousValue, currentValue) => previousValue + currentValue,
-    0
-  );
-
-  let reponse = { wlt: result, total: sumActif };
-  return reponse;
+  return end;
 }
 
 export default async function handler(req, res) {
   //db
   const client = await clientPromise;
 
-  const user = await client.db().collection("user_id");
-
-  let result = await user.find({}).toArray();
   const lb = await client.db().collection("leaderboard");
+  let result = searchWallet();
 
-  //enumerate user, avoid admin, get wallet, update leaderboard (avec le truc pour que ça crée) et c(est fini)
-  let l2 = [];
-  res.status(500).json({ msg: "ca tourne" });
   for (let i = 0; i < result.length; i++) {
-    if (result[i].psd != "admin") {
-      try {
-        let result_q = await searchWallet(result[i].psd);
-        console.log(result_q);
-        let score = result_q.total;
-        let pipe = { psd: result[i].psd, score: score };
-        const flag_update = await lb.updateOne(
-          { psd: result[i].psd },
-          {
-            $set: pipe,
-          },
-          { upsert: true }
-        );
-        l2.push("maj1");
-      } catch (error) {
-        console.log(error);
-        l2.push("erro2");
-      }
-    } else {
-      return l2.push("error admin");
-    }
+    const flag_update = await lb.updateOne(
+      { psd: result[i].psd },
+      {
+        $set: result[i],
+      },
+      { upsert: true }
+    );
   }
+
+  res.status(500).json({ msg: "ca tourne" });
 }
