@@ -43,7 +43,7 @@ export default async function handler(req, res) {
   let result = await user.find({}).toArray();
   //enumerate user, avoid admin, get wallet, update leaderboard (avec le truc pour que ça crée) et c(est fini)
   let l2 = result.map(async (element) => {
-    if (element.psd != "admin") {
+    /*if (element.psd != "admin") {
       try {
         let result_q = await searchWallet(element.psd);
         console.log(result_q);
@@ -63,7 +63,7 @@ export default async function handler(req, res) {
       }
     } else {
       return "error admin";
-    }
+    }*/ return 1;
   });
 
   res.status(500).json(l2);
