@@ -51,8 +51,7 @@ export default async function handler(req, res) {
   let value_to_pay = json[from] * req.query.trade[2];
 
   if (result[from] && result[from] >= value_to_pay) {
-    //a implanter la création de l'historique
-
+    //upadte
     let coins_after = result[from] - value_to_pay;
     let new_coins = req.query.trade[2];
 
