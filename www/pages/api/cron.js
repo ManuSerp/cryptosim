@@ -23,7 +23,7 @@ export async function searchWallet() {
         json = json.market_data.current_price;
 
         value = value * json.usd;
-        actif.push(json.usd);
+        actif.push(result[key]);
       }
     }
 
