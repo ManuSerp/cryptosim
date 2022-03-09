@@ -41,17 +41,16 @@ const coinlistjson = {
 
 
 async function searchWallet(pseudo) {
-  const response = await fetch("/api/db/wallet", {
+  const data = await fetch("/api/db/wallet", {
     method: "POST",
     body: JSON.stringify({ pseudo }),
     headers: {
       "Content-Type": "application/json",
     },
-  });
-  const data = await response.json();
-
+  }).then(res => res.json());
   return data;
 };
+
 
 const showWalletContent = (coin,amount,pseudo) => {
     const { data, error } = useSWR("/api/db/wallet" + coin, searchWallet(pseudo), {
@@ -65,8 +64,7 @@ const showWalletContent = (coin,amount,pseudo) => {
     if (!data) {
       return <div>loading...</div>;
     }
-    return <><div>coins
-      </div><CoinCard coin={coin} amount={data.usd} /></>;
+    return <CoinCard coin={coin} amount={data.wlt} />;
   };
 
 export default function Wallet() {
