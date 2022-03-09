@@ -49,13 +49,18 @@ export default async function handler(req, res) {
         console.log(result_q);
         let score = result_q.total;
         let pipe = { psd: element.psd, score: score };
+        const flag_update = await lb.updateOne(
+          { psd: element.psd },
+          {
+            $set: pipe,
+          },
+          { upsert: true }
+        );
       } catch (error) {
         console.log(error);
       }
     }
   });
 
-  let rep = await searchWallet("Manu");
-
-  res.status(500).json(rep);
+  res.status(500).json({ msg: "finish" });
 }
