@@ -42,7 +42,7 @@ export default async function handler(req, res) {
 
   let result = await user.find({}).toArray();
   //enumerate user, avoid admin, get wallet, update leaderboard (avec le truc pour que ça crée) et c(est fini)
-  let l2 = result.map((element) => {
+  let l2 = await result.map(async (element) => {
     /*if (element.psd != "admin") {
       try {
         let result_q = await searchWallet(element.psd);
