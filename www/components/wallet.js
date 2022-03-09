@@ -15,15 +15,50 @@ const coinlistjson = {
     coinlist.push(coinlistjson[c]);
   }
   
+  // export const coinfetcher= async(
+  //   url,payload)=>{
+  //     const options={
+  //       method:"POST" ,...CoinCard(payload&&{body:payload}),headers:{accept:"application/json","Content-Type":"application/json",},
+  
+  //     };
+  //     return coinfetcher(url,options).then(r=>r.json());
+  //   }
+
+  // function App() {
+  //   const { data } = useSWR('/api/db/wallet', coinfetcher) // <--------------GET
+  
+  //   return <>
+  //     <CoinCard coin={coin} amount={data.usd} />
+  //     <button onClick={() => {
+  //       fetch('/api/db/wallet', { method: 'POST', body:})  // <---POST
+  //     }}>update data</button>
+  //   </>
+  // }
 
 
-const fetcher = async (url) => {
-    const response = await fetch(url).then((response) => response.json());
-    return response;
-  };
 
-const showWalletContent = (i, name) => {
-    const { data, error } = useSWR("/api/db/" + name, fetcher, {
+
+
+
+async function searchWallet(pseudo) {
+  const response = await fetch("/api/db/wallet", {
+    method: "POST",
+    body: JSON.stringify({ pseudo }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const data = await response.json();
+
+  if (!response.ok) {
+    password;
+    throw new Error(data.message || "Something went wrong!");
+  }
+  return data;
+}
+
+const showWalletContent = (coin,amount,pseudo) => {
+    const { data, error } = useSWR("/api/db/wallet" + coin, searchWallet(pseudo), {
       refreshInterval: 10000,
     });
   
@@ -34,7 +69,7 @@ const showWalletContent = (i, name) => {
     if (!data) {
       return <div>loading...</div>;
     }
-    return <CoinPrice key={i} name={name} value={data.usd} />;
+    return <CoinCard coin={coin} amount={data.usd} />;
   };
 
 export default function Wallet() {
@@ -49,7 +84,7 @@ export default function Wallet() {
         <div className="wallet-layout-row-2">
             <p>Valeurs</p>
             {WalletInfo.map(({ coin, amount }) => (
-                <CoinCard coin={coin} amount={amount} />
+                showWalletContent(coin,amount)
             ))}
         </div>
         </div>
