@@ -37,10 +37,11 @@ export default async function handler(req, res) {
   //db
   const client = await clientPromise;
 
-  const lb = await client.db().collection("leaderboard");
   const user = await client.db().collection("user_id");
 
   let result = await user.find({}).toArray();
+  const lb = await client.db().collection("leaderboard");
+
   //enumerate user, avoid admin, get wallet, update leaderboard (avec le truc pour que ça crée) et c(est fini)
   let l2 = [];
   for (let i = 0; i < result.length; i++) {
