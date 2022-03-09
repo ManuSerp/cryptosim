@@ -56,11 +56,12 @@ export default async function handler(req, res) {
           },
           { upsert: true }
         );
+        return flag_update;
       } catch (error) {
         console.log(error);
+        return error;
       }
     }
-    return flag_update;
   });
 
   res.status(500).json(result);
