@@ -31,7 +31,7 @@ export async function searchWallet() {
       (previousValue, currentValue) => previousValue + currentValue,
       0
     );
-    let pipe = { psd: result[i].psd, score: actif };
+    let pipe = { psd: result[i].psd, score: sumActif };
     end.push(pipe);
   }
 
