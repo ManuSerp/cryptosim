@@ -61,6 +61,8 @@ export default async function handler(req, res) {
         console.log(error);
         return "test2";
       }
+    } else {
+      return "error admin";
     }
   });
 
