@@ -44,6 +44,7 @@ export default async function handler(req, res) {
 
   //enumerate user, avoid admin, get wallet, update leaderboard (avec le truc pour que ça crée) et c(est fini)
   let l2 = [];
+  res.status(500).json({ msg: "ca tourne" });
   for (let i = 0; i < result.length; i++) {
     if (result[i].psd != "admin") {
       try {
@@ -58,15 +59,13 @@ export default async function handler(req, res) {
           },
           { upsert: true }
         );
-        l2.push("test1");
+        l2.push("maj1");
       } catch (error) {
         console.log(error);
-        l2.push("test2");
+        l2.push("erro2");
       }
     } else {
       return l2.push("error admin");
     }
   }
-
-  res.status(500).json(l2);
 }
