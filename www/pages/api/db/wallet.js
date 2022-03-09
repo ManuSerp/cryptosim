@@ -19,12 +19,14 @@ export default async function handler(req, res) {
   for (let key in result) {
     if (key !== "psd" && key !== "_id") {
       let value = result[key];
-      let price = await fetch(
-        process.env.ABS_URL + "/api/crypto/" + symbols[key]
-      );
-      let json = await price.json();
+      if (key !== "usd") {
+        let price = await fetch(
+          process.env.ABS_URL + "/api/crypto/" + symbols[key]
+        );
+        let json = await price.json();
 
-      value = value * json["usd"];
+        value = value * json["usd"];
+      }
       actif.push(value);
     }
   }
