@@ -1,13 +1,13 @@
 div .layout-body {
-  min-height: 100%;
   background-color: #282a36;
   color: #e1ec98;
   font-family: "Nunito";
 }
 
 div .layout-wrapper {
+  height: 100vh;
   display: grid;
-  grid-template-rows: 10vh;
+  grid-template-rows: 10vh 90vh;
   grid-template-areas:
     "nav"
     "main";

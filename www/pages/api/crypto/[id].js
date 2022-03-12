@@ -1,5 +1,8 @@
+const symbols = require("../../../data/symbols.json");
+
+
 export default async function handler(req, res) {
-  const url = "https://api.coingecko.com/api/v3/coins/" + req.query.id;
+  const url = "https://api.coingecko.com/api/v3/coins/" + symbols[req.query.id];
 
   let response = await fetch(url);
 
@@ -9,6 +12,6 @@ export default async function handler(req, res) {
     let json = await response.json();
     res.status(200).json(json.market_data.current_price);
   } else {
-    res.status(200).json(response.ok);
+    res.status(500).end();
   }
 }
