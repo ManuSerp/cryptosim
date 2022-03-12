@@ -14,7 +14,7 @@ const fetcherCoin = async (url) => {
 
 const showCoinprice = (i, name) => {
   const { data, error } = useSWR("/api/crypto/" + name, fetcherCoin, {
-    refreshInterval: 10000,
+    refreshInterval: 30000,
   });
 
   if (error) {
