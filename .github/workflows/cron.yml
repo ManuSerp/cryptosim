@@ -1,0 +1,12 @@
+name: leaderboard-cron
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+jobs:
+  cron:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call api leaderboard
+        run: |
+          curl --request POST \
+          --url 'https://cryptosim.vercel.app/api/cron' \
