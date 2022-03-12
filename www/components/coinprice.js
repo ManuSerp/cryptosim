@@ -1,8 +1,21 @@
 import Image from "next/image";
+import { useState } from "react";
 import Buy from "./buy";
 import Sell from "./sell";
 
 export default function CoinPrice({ name, value }) {
+  const [text, setText] = useState("");
+
+  const submitBuy = async () => {
+    const url = "/api/" + name + "/usd/" + text;
+    const response = await fetch(url, { method: "POST" });
+  };
+
+  const submitSell = async () => {
+    const url = "/api/" + "/usd/" + name + text;
+    const response = await fetch(url, { method: "POST" });
+  };
+
   return (
     <div className="CoinPrice">
       <div className="left">
@@ -20,10 +33,15 @@ export default function CoinPrice({ name, value }) {
             id="quantite"
             placeholder="Amount to trade"
             size="80%"
+            onChange={(e) => setText(e.target.value)}
           />
         </form>
-        <Buy />
-        <Sell />
+        <div className="buy" type="button" onClick={submitBuy}>
+          Buy
+        </div>
+        <div className="sell" type="button" onClick={submitSell}>
+          Sell
+        </div>
       </div>
     </div>
   );
