@@ -4,7 +4,7 @@ import useSWR from "swr";
 const coinlistjson = require("../data/symbols.json");
 const coinlist = [];
 for (var c in coinlistjson) {
-  coinlist.push(coinlistjson[c]);
+  coinlist.push(c);
 }
 
 const fetcherCoin = async (url) => {
