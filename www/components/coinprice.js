@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Buy from "./buy";
 import Sell from "./sell";
+
 export default function CoinPrice({ name, value }) {
   return (
     <div className="CoinPrice">

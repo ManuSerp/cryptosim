@@ -1,6 +1,6 @@
 export default function Sell() {
   return (
-    <div className="buy" type="button">
+    <div className="sell" type="button">
       Sell
     </div>
   );

@@ -1,14 +1,7 @@
 import CoinPrice from "./coinprice";
 import useSWR from "swr";
 
-const coinlistjson = {
-  btc: "bitcoin",
-  eth: "ethereum",
-  usd: "uniswap-state-dollar",
-  usdt: "tether",
-  bnb: "binancecoin",
-  xrp: "ripple",
-};
+const coinlistjson = require("../data/symbols.json");
 const coinlist = [];
 for (var c in coinlistjson) {
   coinlist.push(coinlistjson[c]);
