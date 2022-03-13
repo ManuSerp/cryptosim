@@ -21,13 +21,23 @@ export default function BalanceLeaderBoard() {
   if (!data) {
     return <div>loading...</div>;
   }
-  
+
   return (
     <div className="balance-leaderboard">
       <div className="LeaderBoard">
+        <div className="balance">
+          {loading && <a>LOADING...</a>}
+          {!session && !loading && <div>Not Connected</div>}
+          {session && (
+            <div>
+              Balance : {data.find(({ psd }) => psd == session.user.name).score}
+              $
+            </div>
+          )}
+        </div>
         <p>LeaderBoard :</p>
         {data.map(({ psd, score }, i) => (
-          <UserLeaderBoard key={i} rank={i} name={psd} balance={score} />
+          <UserLeaderBoard key={i} rank={i + 1} name={psd} balance={score} />
         ))}
       </div>
     </div>
