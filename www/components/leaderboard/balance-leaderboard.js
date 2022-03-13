@@ -37,7 +37,7 @@ export default function BalanceLeaderBoard() {
         </div>
         <p>LeaderBoard :</p>
         {data.map(({ psd, score }, i) => (
-          <UserLeaderBoard key={i} rank={i} name={psd} balance={score} />
+          <UserLeaderBoard key={i} rank={i + 1} name={psd} balance={score} />
         ))}
       </div>
     </div>
