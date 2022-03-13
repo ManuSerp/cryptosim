@@ -21,7 +21,7 @@ export default function BalanceLeaderBoard() {
   if (!data) {
     return <div>loading...</div>;
   }
-  const balance = data.find(({ psd }) => psd == session.user.name).score;
+  
   return (
     <div className="balance-leaderboard">
       <div className="LeaderBoard">
