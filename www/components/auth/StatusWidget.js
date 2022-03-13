@@ -10,12 +10,12 @@ function StatusWidget() {
   }
 
   return (
-    <>
+    <div className="Login">
       {loading && <a>LOADING...</a>}
       {!session && !loading && (
-        <a>
-          <Link href="/auth">Login </Link>Anonymous
-        </a>
+        <button className="but-Login">
+          <Link href="/auth">Login</Link>
+        </button>
       )}
 
       {session && (
@@ -24,7 +24,7 @@ function StatusWidget() {
           <Link href="/account/profile">{session.user.name}</Link>
         </a>
       )}
-    </>
+    </div>
   );
 }
 

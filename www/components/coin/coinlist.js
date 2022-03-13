@@ -1,10 +1,10 @@
 import CoinPrice from "./coinprice";
 import useSWR from "swr";
 
-const coinlistjson = require("../data/symbols.json");
+const coinlistjson = require("../../data/symbols.json");
 const coinlist = [];
 for (var c in coinlistjson) {
-  coinlist.push(coinlistjson[c]);
+  coinlist.push(c);
 }
 
 const fetcherCoin = async (url) => {
@@ -14,7 +14,7 @@ const fetcherCoin = async (url) => {
 
 const showCoinprice = (i, name) => {
   const { data, error } = useSWR("/api/crypto/" + name, fetcherCoin, {
-    refreshInterval: 10000,
+    refreshInterval: 30000,
   });
 
   if (error) {

@@ -1,19 +1,41 @@
 nav {
-  padding: 10px 0;
   display: flex;
-
+  justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #ddd;
-  background-color: green;
+  font-size: x-large;
 }
 
 nav a {
-  color: #ec83c0;
-  font-size: larger;
+  color: #3bb54a;
   margin: 5px;
+  text-decoration: none;
 }
 
 .nav-logo {
   margin-right: 10px;
   margin-left: 10px;
+}
+
+.nav-title {
+  text-decoration: none;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  margin-right: 25px;
+}
+
+.but-Login {
+  border: 2px solid #3bb54a;
+  background-color: #282a36;
+  border-radius: 15px;
+  padding: 5px;
+  font-size: x-large;
+  margin: 10px;
 }

@@ -1,22 +1,17 @@
-div .layout-body {
-  background-color: #282a36;
-  color: #e1ec98;
-  font-family: "Nunito";
-}
-
 div .layout-wrapper {
-  height: 100vh;
+  background-color: #282a36;
+  color: #f5b445;
+  font-family: "Nunito";
   display: grid;
-  grid-template-rows: 10vh 90vh;
-  grid-template-areas:
-    "nav"
-    "main";
+  grid-template-rows: 20% 80%;
 }
 
 div .layout-row-1 {
-  grid-area: nav;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 
 div .layout-row-2 {
-  grid-area: main;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
