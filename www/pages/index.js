@@ -1,5 +1,4 @@
-import Balance from "../components/balance";
-import LeaderBoard from "../components/leaderboard/leaderboard";
+import BalanceLeaderBoard from "../components/leaderboard/balance-leaderboard";
 
 import CoinList from "../components/coin/coinlist";
 
@@ -14,10 +13,7 @@ export default function Home() {
             <Wallet />
           </div>
           <div className="index-left-row-2">
-            <Balance />
-          </div>
-          <div className="index-left-row-3">
-            <LeaderBoard />
+            <BalanceLeaderBoard />
           </div>
         </div>
         <div className="index-right">

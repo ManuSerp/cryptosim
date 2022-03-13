@@ -28,6 +28,7 @@ body {
 
 .index-left-row-1 {
   grid-row-start: 1;
+  grid-row-end: 2;
 }
 
 .index-left-row-2 {
