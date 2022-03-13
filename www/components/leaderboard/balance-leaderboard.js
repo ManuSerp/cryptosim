@@ -21,14 +21,19 @@ export default function BalanceLeaderBoard() {
   if (!data) {
     return <div>loading...</div>;
   }
-  const balance = data.find(({ psd }) => psd == session.user.name).score;
+
   return (
     <div className="balance-leaderboard">
       <div className="LeaderBoard">
         <div className="balance">
           {loading && <a>LOADING...</a>}
           {!session && !loading && <div>Not Connected</div>}
-          {session && <div>Balance : {balance}$</div>}
+          {session && (
+            <div>
+              Balance : {data.find(({ psd }) => psd == session.user.name).score}
+              $
+            </div>
+          )}
         </div>
         <p>LeaderBoard :</p>
         {data.map(({ psd, score }, i) => (
