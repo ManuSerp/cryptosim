@@ -30,3 +30,12 @@ nav a {
   align-items: center;
   margin-right: 25px;
 }
+
+.but-Login {
+  border: 2px solid #3bb54a;
+  background-color: #282a36;
+  border-radius: 15px;
+  padding: 5px;
+  font-size: x-large;
+  margin: 10px;
+}

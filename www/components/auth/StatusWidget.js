@@ -13,9 +13,9 @@ function StatusWidget() {
     <div className="Login">
       {loading && <a>LOADING...</a>}
       {!session && !loading && (
-        <a>
+        <button className="but-Login">
           <Link href="/auth">Login</Link>
-        </a>
+        </button>
       )}
 
       {session && (
