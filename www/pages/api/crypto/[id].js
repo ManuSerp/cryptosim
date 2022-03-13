@@ -1,6 +1,5 @@
 const symbols = require("../../../data/symbols.json");
 
-
 export default async function handler(req, res) {
   const url = "https://api.coingecko.com/api/v3/coins/" + symbols[req.query.id];
 
