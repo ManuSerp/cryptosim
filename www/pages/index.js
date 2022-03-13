@@ -1,7 +1,7 @@
 import Balance from "../components/balance";
-import LeaderBoard from "../components/leaderboard";
+import LeaderBoard from "../components/leaderboard/leaderboard";
 
-import CoinList from "../components/coinlist";
+import CoinList from "../components/coin/coinlist";
 
 import Wallet from "../components/wallet";
 
