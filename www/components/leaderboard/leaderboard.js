@@ -1,17 +1,28 @@
 import UserLeaderBoard from "./userleaderboard";
+import useSWR from "swr";
+
+const fetcherLeaderBoard = async (url) => {
+  const response = await fetch(url).then((response) => response.json());
+  return response;
+};
 
 export default function LeaderBoard() {
-  const users = [
-    { name: "DatBen", balance: 1000 },
-    { name: "DatBen2", balance: 10000 },
-  ];
+  const { data, error } = useSWR("/api/db/leader_board", fetcherLeaderBoard, {
+    refreshInterval: 30000,
+  });
+
+  if (error) {
+    return <div>failed to load </div>;
+  }
+
+  if (!data) {
+    return <div>loading...</div>;
+  }
   return (
     <div className="LeaderBoard">
       <p>LeaderBoard :</p>
-      {users.map(({ name, balance }, i) => (
-
-        <UserLeaderBoard key={i} rank={i} name={name} balance={balance} />
-
+      {data.map(({ psd, score }, i) => (
+        <UserLeaderBoard key={i} rank={i} name={psd} balance={score} />
       ))}
     </div>
   );
