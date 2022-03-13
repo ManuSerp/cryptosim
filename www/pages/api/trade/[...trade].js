@@ -36,26 +36,23 @@ export default async function handler(req, res) {
     return res.status(501).end();
   }
   //check price
+  let price;
   if (req.query.trade[1] === "usd") {
-    const price = await fetch(process.env.ABS_URL + "/api/crypto/usd");
+    price = await fetch(process.env.ABS_URL + "/api/crypto/usd");
   } else {
-    const price = await fetch(
+    price = await fetch(
       process.env.ABS_URL + "/api/crypto/" + req.query.trade[0]
     );
-  }
-
-  if (!price) {
-    res.status(502).end();
   }
 
   const json = await price.json();
 
   let from = req.query.trade[1];
-
+  let value_to_pay;
   if (req.query.trade[1] === "usd") {
-    let value_to_pay = req.query.trade[2] / json[req.query.trade[0]];
+    value_to_pay = req.query.trade[2] / json[req.query.trade[0]];
   } else {
-    let value_to_pay = json[from] * req.query.trade[2];
+    value_to_pay = json[from] * req.query.trade[2];
   }
 
   if (result[from] && result[from] >= value_to_pay) {
