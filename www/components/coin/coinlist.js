@@ -1,7 +1,7 @@
 import CoinPrice from "./coinprice";
 import useSWR from "swr";
 
-const coinlistjson = require("../data/symbols.json");
+const coinlistjson = require("../../data/symbols.json");
 const coinlist = [];
 for (var c in coinlistjson) {
   coinlist.push(c);

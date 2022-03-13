@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import StatusWidget from "./auth/StatusWidget";
+import StatusWidget from "../auth/StatusWidget";
 
 function Navbar() {
   return (

@@ -1,7 +1,5 @@
 import Image from "next/image";
 import { useState } from "react";
-import Buy from "./buy";
-import Sell from "./sell";
 
 export default function CoinPrice({ name, value }) {
   const [text, setText] = useState("");
