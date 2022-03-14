@@ -56,13 +56,15 @@ import { useSession } from "next-auth/react";
 // }
 
 async function searchWallet(pseudo) {
-  const data = await fetch("/api/db/wallet", {
+  const response = await fetch("/api/db/wallet", {
     method: "POST",
     body: JSON.stringify({ pseudo }),
     headers: {
       "Content-Type": "application/json",
     },
-  }).then((res) => res.json());
+  });
+
+  const data = await response.json();
   return data;
 }
 
