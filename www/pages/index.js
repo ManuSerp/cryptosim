@@ -2,7 +2,7 @@ import BalanceLeaderBoard from "../components/leaderboard/balance-leaderboard";
 
 import CoinList from "../components/coin/coinlist";
 
-import Wallet from "../components/wallet";
+import Wallet from "../components/wallet/wallet";
 
 export default function Home() {
   return (

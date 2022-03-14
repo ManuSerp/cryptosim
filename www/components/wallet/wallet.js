@@ -69,14 +69,21 @@ async function searchWallet(pseudo) {
 export default function Wallet() {
   const { data: session, status } = useSession();
   const loading = status === "loading";
-
-  const { data, error } = useSWR(
-    "/api/db/wallet",
-    searchWallet(session.name.pseudo),
-    {
+  let data;
+  let error;
+  if (session) {
+    [data, error] = useSWR("/api/db/wallet", searchWallet(session.user.name), {
       refreshInterval: 30000,
+    });
+    const wallet = [];
+    let j = 0;
+    for (i in data[0].wlt) {
+      if (j > 1) {
+        wallet.push({ coin: i, amount: data[0].wlt[i] });
+      }
+      j++;
     }
-  );
+  }
 
   if (error) {
     return <div>failed to load </div>;
@@ -85,22 +92,21 @@ export default function Wallet() {
   if (!data) {
     return <div>loading...</div>;
   }
-  const wallet = [];
-  let j = 0;
-  for (i in data[0].wlt) {
-    if (j > 1) {
-      wallet.push({ coin: i, amount: data[0].wlt[i] });
-    }
-    j++;
-  }
+
   return (
     <div className="wallet-body">
       <div className="wallet-wrapper">
         <div className="wallet-layout-row-1">Mon Wallet</div>
         <div className="wallet-layout-row-2">
-          {wallet.map(({ coin, amount }, i) => {
-            return <CoinCard key={i} coin={coin} amount={amount} />;
-          })}
+          {loading && <a>LOADING...</a>}
+          {!session && !loading && <div>Not Connected</div>}
+          {session && (
+            <div>
+              {wallet.map(({ coin, amount }, i) => {
+                return <CoinCard key={i} coin={coin} amount={amount} />;
+              })}
+            </div>
+          )}
         </div>
       </div>
     </div>
