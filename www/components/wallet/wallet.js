@@ -1,6 +1,7 @@
 import CoinCard from "./walletcontents";
 import useSWR from "swr";
 import { useSession } from "next-auth/react";
+import { useState } from "react";
 
 // export const coinfetcher= async(
 //   url,payload)=>{
@@ -68,25 +69,7 @@ async function searchWallet(pseudo) {
   return data;
 }
 
-export default function Wallet() {
-  const { data: session, status } = useSession();
-  const loading = status === "loading";
-  let data;
-  let error;
-  if (session) {
-    [data, error] = useSWR("/api/db/wallet", searchWallet(session.user.name), {
-      refreshInterval: 30000,
-    });
-    const wallet = [];
-    let j = 0;
-    for (i in data[0].wlt) {
-      if (j > 1) {
-        wallet.push({ coin: i, amount: data[0].wlt[i] });
-      }
-      j++;
-    }
-  }
-
+const temp = (pseudo) => {
   if (error) {
     return <div>failed to load </div>;
   }
@@ -94,7 +77,26 @@ export default function Wallet() {
   if (!data) {
     return <div>loading...</div>;
   }
+};
 
+export default function Wallet() {
+  const { data: session, status } = useSession();
+  // let [data, error] = useState(0);
+  // if (data) {
+  //   [data, error] = useSWR("/api/db/wallet", searchWallet(session.user.name), {
+  //     refreshInterval: 30000,
+  //   });
+  //   const wallet = [];
+  //   let j = 0;
+  //   for (i in data[0].wlt) {
+  //     if (j > 1) {
+  //       wallet.push({ coin: i, amount: data[0].wlt[i] });
+  //     }
+  //     j++;
+  //   }
+  // }
+
+  const loading = status === "loading";
   return (
     <div className="wallet-body">
       <div className="wallet-wrapper">
@@ -102,13 +104,15 @@ export default function Wallet() {
         <div className="wallet-layout-row-2">
           {loading && <a>LOADING...</a>}
           {!session && !loading && <div>Not Connected</div>}
-          {session && (
+
+          {/* {session && (
             <div>
               {wallet.map(({ coin, amount }, i) => {
                 return <CoinCard key={i} coin={coin} amount={amount} />;
               })}
             </div>
           )}
+           */}
         </div>
       </div>
     </div>
