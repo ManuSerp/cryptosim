@@ -56,20 +56,19 @@ import { useState } from "react";
 //   );
 // }
 
-async function searchWallet(pseudo) {
-  const response = await fetch("/api/db/wallet", {
-    method: "POST",
-    body: JSON.stringify({ pseudo }),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-
+async function searchWallet(url) {
+  const response = await fetch(url);
   const data = await response.json();
   return data;
 }
 
-const temp = (pseudo) => {
+export default function Wallet() {
+  const { data: session, status } = useSession();
+  const loading = status === "loading";
+  const { data, error } = useSWR("/api/db/wlt/wallet_auth", searchWallet, {
+    refreshInterval: 30000,
+  });
+
   if (error) {
     return <div>failed to load </div>;
   }
@@ -77,26 +76,16 @@ const temp = (pseudo) => {
   if (!data) {
     return <div>loading...</div>;
   }
-};
 
-export default function Wallet() {
-  const { data: session, status } = useSession();
-  // let [data, error] = useState(0);
-  // if (data) {
-  //   [data, error] = useSWR("/api/db/wallet", searchWallet(session.user.name), {
-  //     refreshInterval: 30000,
-  //   });
-  //   const wallet = [];
-  //   let j = 0;
-  //   for (i in data[0].wlt) {
-  //     if (j > 1) {
-  //       wallet.push({ coin: i, amount: data[0].wlt[i] });
-  //     }
-  //     j++;
-  //   }
-  // }
+  const wallet = [];
+  let j = 0;
+  for (let i in data.wlt) {
+    if (j > 1) {
+      wallet.push({ coin: i, amount: data.wlt[i] });
+    }
+    j++;
+  }
 
-  const loading = status === "loading";
   return (
     <div className="wallet-body">
       <div className="wallet-wrapper">
@@ -104,15 +93,13 @@ export default function Wallet() {
         <div className="wallet-layout-row-2">
           {loading && <a>LOADING...</a>}
           {!session && !loading && <div>Not Connected</div>}
-
-          {/* {session && (
+          {session && (
             <div>
               {wallet.map(({ coin, amount }, i) => {
                 return <CoinCard key={i} coin={coin} amount={amount} />;
               })}
             </div>
           )}
-           */}
         </div>
       </div>
     </div>
