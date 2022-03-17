@@ -7,7 +7,7 @@ const symbols = require("../../../../data/symbols.json");
 export default async function handler(req, res) {
   const client = await clientPromise;
   const sess = await getSession({ req });
-  let result = undefined;
+  let result = 0;
   const wallets = await client.db().collection("wallet");
   if (sess) {
     result = await wallets.findOne({
@@ -15,7 +15,7 @@ export default async function handler(req, res) {
     });
   }
 
-  if (!result) {
+  if (result === 0) {
     result = { msg: "error" };
   }
 
