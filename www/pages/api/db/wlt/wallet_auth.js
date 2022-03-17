@@ -16,7 +16,7 @@ export default async function handler(req, res) {
   }
 
   if (result === 0) {
-    result = { msg: "error" };
+    result = { wlt: "error" };
   }
 
   let reponse = { wlt: result };
