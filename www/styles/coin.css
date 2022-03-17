@@ -1,14 +1,14 @@
 .CoinList {
   text-align: center;
-  border: 1px solid #9e9a9a;
-  border-radius: 8px;
+  border: 1px solid #646262;
+  border-radius: 15px;
   margin: 10px;
 }
 
 .CoinPrice {
   text-align: center;
-  border: 1px solid #9e9a9a;
-  border-radius: 8px;
+  border: 1px solid #646262;
+  border-radius: 15px;
   margin: 10px;
   display: grid;
   grid-template-areas: "left right";
@@ -17,9 +17,12 @@
 
 .CoinPrice > .left {
   grid-area: left;
-  border-right: 1px solid #9e9a9a;
+  border-right: 1px solid #646262;
 }
 
 .CoinPrice > .right {
   grid-area: right;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

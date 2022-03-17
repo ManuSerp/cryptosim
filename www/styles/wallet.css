@@ -18,3 +18,9 @@
     text-align: center;
 }
 
+.coin-card{
+        text-align: center;
+        border: 1px solid black;
+        border-radius: 8px;
+        margin: 2px;
+}
