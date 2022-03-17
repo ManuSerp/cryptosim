@@ -7,10 +7,10 @@ const symbols = require("../../../../data/symbols.json");
 export default async function handler(req, res) {
   const client = await clientPromise;
   const sess = await getSession({ req });
-
+  let result = undefined;
   const wallets = await client.db().collection("wallet");
   if (sess) {
-    const result = await wallets.findOne({
+    result = await wallets.findOne({
       psd: sess.user.name,
     });
   }
