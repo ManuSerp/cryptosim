@@ -9,10 +9,11 @@ export default async function handler(req, res) {
   const sess = await getSession({ req });
 
   const wallets = await client.db().collection("wallet");
-
-  const result = await wallets.findOne({
-    psd: sess.user.name,
-  });
+  if (sess) {
+    const result = await wallets.findOne({
+      psd: sess.user.name,
+    });
+  }
 
   if (!result) {
     result = { msg: "error" };
