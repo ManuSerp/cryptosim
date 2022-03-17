@@ -4,6 +4,7 @@ div .layout-wrapper {
   font-family: "Nunito";
   display: grid;
   grid-template-rows: 20% 80%;
+  font-size: large;
 }
 
 div .layout-row-1 {

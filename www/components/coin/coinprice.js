@@ -7,11 +7,13 @@ export default function CoinPrice({ name, value }) {
   const submitBuy = async () => {
     const url = "/api/trade/" + name + "/usd/" + text;
     const response = await fetch(url);
+    setText("");
   };
 
   const submitSell = async () => {
     const url = "/api/trade/" + "/usd/" + name + "/" + text;
     const response = await fetch(url);
+    setText("");
   };
 
   return (
@@ -31,6 +33,7 @@ export default function CoinPrice({ name, value }) {
             id="quantite"
             placeholder="Amount to trade"
             size="80%"
+            value={text}
             onChange={(e) => setText(e.target.value)}
           />
         </form>
