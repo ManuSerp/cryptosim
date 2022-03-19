@@ -30,7 +30,10 @@ export default function BalanceLeaderBoard() {
           {!session && !loading && <div>Not Connected</div>}
           {session && (
             <div>
-              Balance : {data.find(({ psd }) => psd == session.user.name).score}
+              Balance :{"  "}
+              {Math.round(
+                data.find(({ psd }) => psd == session.user.name).score * 1000
+              ) / 1000}
               $
             </div>
           )}
