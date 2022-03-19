@@ -3,7 +3,7 @@ import Footer from "./footer";
 
 function Layout({ children }) {
   return (
-    <>
+    <div className="content">
       <head>
         <title>Cryptosim</title>
       </head>
@@ -13,11 +13,8 @@ function Layout({ children }) {
           <Navbar />
         </div>
         <div className="layout-row-2">{children}</div>
-        <div className="layout-row-3">
-          <Footer />
-        </div>
       </div>
-    </>
+    </div>
   );
 }
 

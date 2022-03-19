@@ -1,13 +1,20 @@
 .CoinList {
   text-align: center;
-  border: 1px solid #646262;
+  border: 2px solid var(--grey);
   border-radius: 15px;
+  margin: 10px;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
   margin: 10px;
 }
 
 .CoinPrice {
   text-align: center;
-  border: 1px solid #646262;
+  border: 2px solid var(--grey);
   border-radius: 15px;
   margin: 10px;
   display: grid;
@@ -17,7 +24,7 @@
 
 .CoinPrice > .left {
   grid-area: left;
-  border-right: 1px solid #646262;
+  border-right: 2px solid var(--grey);
 }
 
 .CoinPrice > .right {
@@ -25,4 +32,36 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.buy {
+  border: 2px solid #3bb54a;
+  background-color: #282a36;
+  color: #3bb54a;
+  border-radius: 15px;
+  padding: 5px;
+  font-size: x-large;
+  margin: 10px;
+  cursor: pointer;
+  width: 75%;
+}
+
+.buy:hover {
+  background-color: rgba(82, 82, 86, 255);
+}
+
+.sell {
+  border: 2px solid var(--red);
+  background-color: #282a36;
+  color: var(--red);
+  border-radius: 15px;
+  padding: 5px;
+  font-size: x-large;
+  margin: 10px;
+  cursor: pointer;
+  width: 75%;
+}
+
+.sell:hover {
+  background-color: rgba(82, 82, 86, 255);
 }

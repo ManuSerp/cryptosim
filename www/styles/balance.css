@@ -1,6 +1,6 @@
 .balance {
   text-align: center;
-  border: 1px solid #9e9a9a;
+  border: 2px solid var(--grey);
   border-radius: 8px;
   margin: 10px;
 }

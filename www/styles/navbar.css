@@ -16,6 +16,14 @@ nav a {
   margin-left: 10px;
 }
 
+.LogoutStatusWidget:hover {
+  background-color: rgba(82, 82, 86, 255);
+}
+
+.but-Login:hover {
+  background-color: rgba(82, 82, 86, 255);
+}
+
 .nav-title {
   text-decoration: none;
 }
