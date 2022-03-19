@@ -35,7 +35,7 @@ export default function Wallet() {
   return (
     <div className="wallet-body">
       <div className="wallet-wrapper">
-        <div className="wallet-layout-row-1">Mon Wallet</div>
+        <div className="wallet-layout-row-1">My Wallet</div>
         <div className="wallet-layout-row-2">
           {loading && <a>LOADING...</a>}
           {!session && !loading && <div>Not Connected</div>}
