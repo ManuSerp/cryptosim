@@ -15,18 +15,19 @@ export default function CoinPrice({ name, value }) {
     const response = await fetch(url);
     setText("");
   };
-
+  const img_url = "/img/" + name + ".png";
   return (
     <div className="CoinPrice">
       <div className="left">
         <div className="info">
+          <Image src={img_url} width={25} height={25} />
           {name} {value} $
         </div>
-        <Image src="/img/ex.png" width={600} height={400} />
+        <Image src="/img/ex.png" width={500} height={300} />
       </div>
       <div className="right">
         <form>
-          <p>Quantité</p>
+          <p>Trade :</p>
           <input
             type="text"
             name="quantite"
