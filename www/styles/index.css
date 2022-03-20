@@ -8,6 +8,8 @@ body {
   --orange: #f5b445;
   --red: #c4302b;
   --grey: #646262;
+  --color-light: rgba(132, 139, 200, 0.18);
+  background-color: var(--background);
 }
 
 .index-wrapper {
