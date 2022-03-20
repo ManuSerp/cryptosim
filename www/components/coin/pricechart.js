@@ -35,7 +35,7 @@ export default function Pricechart({ name, index }) {
     coinlistjson[name] +
     "/market_chart?vs_currency=usd&days=7&interval=daily";
   const { data, error } = useSWR(url_price, fetcherChart, {
-    refreshInterval: 30000,
+    refreshInterval: 36000000,
   });
 
   if (error) {
