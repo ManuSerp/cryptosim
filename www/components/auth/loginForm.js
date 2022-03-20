@@ -64,30 +64,31 @@ function LoginForm() {
   }
 
   return (
-    <section>
-      <h1>{isLogin ? "Login" : "Sign Up"}</h1>
-      <form onSubmit={submitHandler}>
-        <div>
-          <label htmlFor="pseudo">Your pseudo</label>
-          <input type="pseudo" id="pseudo" required ref={pseudoInputRef} />
-        </div>
-        <div>
-          <label htmlFor="password">Your Password</label>
-          <input
-            type="password"
-            id="password"
-            required
-            ref={passwordInputRef}
-          />
-        </div>
-        <div>
-          <button>{isLogin ? "Login" : "Create Account"}</button>
-          <button type="button" onClick={switchAuthModeHandler}>
-            {isLogin ? "Create new account" : "Login with existing account"}
-          </button>
-        </div>
-      </form>
-    </section>
+    <div className="auth">
+      <div className="auth-form">
+        <form onSubmit={submitHandler} className="auth-2">
+          <div className="auth-3">
+            <label htmlFor="pseudo">Your Pseudo</label>
+            <input type="pseudo" id="pseudo" required ref={pseudoInputRef} />
+          </div>
+          <div className="auth-4">
+            <label htmlFor="password">Your Password</label>
+            <input
+              type="password"
+              id="password"
+              required
+              ref={passwordInputRef}
+            />
+          </div>
+          <div className="auth-5">
+            <button>{isLogin ? "Login" : "Create Account"}</button>
+            <button type="button" onClick={switchAuthModeHandler}>
+              {isLogin ? "Create new account" : "Login with existing account"}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
   );
 }
 
