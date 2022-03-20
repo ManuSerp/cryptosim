@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { useState } from "react";
+import Pricechart from "./pricechart";
 
-export default function CoinPrice({ name, value }) {
+export default function CoinPrice({ name, value, index }) {
   const [text, setText] = useState("");
 
   const submitBuy = async () => {
@@ -15,6 +16,7 @@ export default function CoinPrice({ name, value }) {
     const response = await fetch(url);
     setText("");
   };
+
   const img_url = "/img/" + name + ".png";
   return (
     <div className="CoinPrice">
@@ -23,7 +25,9 @@ export default function CoinPrice({ name, value }) {
           <Image src={img_url} width={25} height={25} />
           {name} {value} $
         </div>
-        <Image src="/img/ex.png" width={500} height={300} />
+        <div className="chart">
+          <Pricechart name={name} index={index} />
+        </div>
       </div>
       <div className="right">
         <form>
