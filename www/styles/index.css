@@ -14,8 +14,8 @@ body {
 
 .index-wrapper {
   display: grid;
-  grid-template-areas: "left right";
-  grid-template-columns: 25vw 75vw;
+  grid-template-areas: "left mid right";
+  grid-template-columns: 25vw 60vw 15vw;
   height: 90%;
   background-color: #282a36;
   color: #f5b445;
@@ -26,15 +26,18 @@ body {
   grid-area: left;
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.index-mid {
+  grid-area: mid;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .index-right {
   grid-area: right;
-  display: grid;
-  grid-template-areas: "left right";
-  grid-template-columns: 85% 15%;
-  overflow-y: scroll;
-  overflow-x: hidden;
 }
 
 .index-left-row-1 {
@@ -43,8 +46,4 @@ body {
 
 .index-left-row-2 {
   order: 2;
-}
-
-.index-right-col-left {
-  grid-area: left;
 }

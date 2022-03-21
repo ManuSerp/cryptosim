@@ -16,12 +16,10 @@ export default function Home() {
             <BalanceLeaderBoard />
           </div>
         </div>
-        <div className="index-right">
-          <div className="index-right-col-left">
-            <CoinList />
-          </div>
-          <div className="index-right-col-right"></div>
+        <div className="index-mid">
+          <CoinList />
         </div>
+        <div className="index-right"></div>
       </div>
     </div>
   );
