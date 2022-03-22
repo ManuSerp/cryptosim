@@ -12,7 +12,7 @@ export default function CoinPrice({ name, value, index }) {
   };
 
   const submitSell = async () => {
-    const url = "/api/trade/" + "/usd/" + name + "/" + text;
+    const url = "/api/trade/" + "usd/" + name + "/" + text;
     const response = await fetch(url);
     setText("");
   };

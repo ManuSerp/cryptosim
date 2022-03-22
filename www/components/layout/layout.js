@@ -1,20 +1,21 @@
 import Navbar from "./navbar";
-import Footer from "./footer";
+import Head from "next/head";
 
 function Layout({ children }) {
   return (
-    <div className="content">
-      <head>
+    <>
+      <Head>
         <title>Cryptosim</title>
-      </head>
-
-      <div className="layout-wrapper">
-        <div className="layout-row-1">
-          <Navbar />
+      </Head>
+      <div className="content">
+        <div className="layout-wrapper">
+          <div className="layout-row-1">
+            <Navbar />
+          </div>
+          <div className="layout-row-2">{children}</div>
         </div>
-        <div className="layout-row-2">{children}</div>
       </div>
-    </div>
+    </>
   );
 }
 

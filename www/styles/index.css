@@ -26,13 +26,12 @@ body {
   grid-area: left;
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .index-right {
   grid-area: right;
-  display: grid;
-  grid-template-areas: "left right";
-  grid-template-columns: 85% 15%;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -43,8 +42,4 @@ body {
 
 .index-left-row-2 {
   order: 2;
-}
-
-.index-right-col-left {
-  grid-area: left;
 }
