@@ -6,13 +6,13 @@ export default function CoinPrice({ name, value, index }) {
   const [text, setText] = useState("");
 
   const submitBuy = async () => {
-    const url = "/api/trade/" + name + "/usd/" + text;
+    const url = "/api/trade/" + name + "/eur/" + text;
     const response = await fetch(url);
     setText("");
   };
 
   const submitSell = async () => {
-    const url = "/api/trade/" + "usd/" + name + "/" + text;
+    const url = "/api/trade/" + "eur/" + name + "/" + text;
     const response = await fetch(url);
     setText("");
   };
@@ -23,7 +23,7 @@ export default function CoinPrice({ name, value, index }) {
       <div className="left">
         <div className="info">
           <Image src={img_url} width={25} height={25} />
-          {name} {value} $
+          {name} {value} €
         </div>
         <div className="chart">
           <Pricechart name={name} index={index} />
