@@ -1,7 +1,7 @@
 import { getSession } from "next-auth/react";
 
 import UserProfile from "../../components/profile/user-profile";
-import Wallet from "../components/wallet/wallet";
+import Wallet from "../../components/wallet/wallet";
 
 function ProfilePage() {
   return (
