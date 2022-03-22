@@ -21,18 +21,18 @@ function NewPass() {
 
       const checkExisting = await user.findOne({ pseudo: enteredPseudo });
       //Send error response if duplicate user is found
+      // FAIRE MONGO DANS UNE API ### A RECHECK QUE C4EST BIEN ADMIN SINON TEJ
       if (!checkExisting) {
         setRes("ERROR PROBABLY NO USER");
       } else {
         const flag_update = await wlt.updateOne(
           { psd: pseudoInputRef },
           {
-            $set: {pwd = await hash(password, 12)},
+            $set: { pwd: await hash(password, 12) },
           }
         );
-        setRes("Done")
+        setRes("Done");
       }
-
     } catch (error) {
       console.log(error);
       setRes("error");
