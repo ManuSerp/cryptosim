@@ -1,10 +1,8 @@
-import { useSession } from "next-auth/react";
-
 export default function UserLeaderBoard({ rank, name, balance }) {
   return (
     <>
       <div className="UserLeaderBoard">
-        {rank}. {name} {balance}€
+        {rank}. {name} {Math.round(balance * 1000) / 1000}$
       </div>
     </>
   );

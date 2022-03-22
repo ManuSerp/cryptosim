@@ -6,7 +6,7 @@ nav {
 }
 
 nav a {
-  color: #3bb54a;
+  color: var(--green);
   margin: 5px;
   text-decoration: none;
 }
@@ -14,6 +14,14 @@ nav a {
 .nav-logo {
   margin-right: 10px;
   margin-left: 10px;
+}
+
+.LogoutStatusWidget:hover {
+  background-color: rgba(82, 82, 86, 255);
+}
+
+.but-Login:hover {
+  background-color: rgba(82, 82, 86, 255);
 }
 
 .nav-title {
@@ -38,4 +46,15 @@ nav a {
   padding: 5px;
   font-size: x-large;
   margin: 10px;
+}
+
+.LogoutStatusWidget {
+  border: 2px solid #3bb54a;
+  background-color: #282a36;
+  color: #3bb54a;
+  border-radius: 15px;
+  padding: 5px;
+  font-size: x-large;
+  margin: 10px;
+  cursor: pointer;
 }

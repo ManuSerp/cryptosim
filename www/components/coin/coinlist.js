@@ -24,7 +24,7 @@ const showCoinprice = (i, name) => {
   if (!data) {
     return <div>loading...</div>;
   }
-  return <CoinPrice key={i} name={name} value={data.usd} />;
+  return <CoinPrice key={i} name={name} value={data.usd} index={i} />;
 };
 
 export default function CoinList() {

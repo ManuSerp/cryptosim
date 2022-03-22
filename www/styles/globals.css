@@ -6,11 +6,4 @@
 @import url("navbar.css");
 @import url("coin.css");
 @import url("wallet.css");
-@import url("buy.css");
-@import url("sell.css");
-
-#info-log {
-  background-color: rgb(7, 5, 54);
-  margin-top: 20vh;
-  min-height: 40vh;
-}
+@import url("auth.css");

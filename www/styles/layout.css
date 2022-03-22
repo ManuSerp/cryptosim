@@ -1,17 +1,23 @@
+div .content {
+  overflow: hidden;
+  height: 100vh;
+}
+
 div .layout-wrapper {
   background-color: #282a36;
   color: #f5b445;
   font-family: "Nunito";
-  display: grid;
-  grid-template-rows: 20% 80%;
+  display: flex;
+  flex-direction: column;
+  font-size: large;
 }
 
 div .layout-row-1 {
-  grid-row-start: 1;
-  grid-row-end: 2;
+  height: 15%;
+  order: 1;
 }
 
 div .layout-row-2 {
-  grid-row-start: 2;
-  grid-row-end: 3;
+  order: 2;
+  height: 80%;
 }

@@ -17,10 +17,7 @@ export default function Home() {
           </div>
         </div>
         <div className="index-right">
-          <div className="index-right-col-left">
-            <CoinList />
-          </div>
-          <div className="index-right-col-right"></div>
+          <CoinList />
         </div>
       </div>
     </div>

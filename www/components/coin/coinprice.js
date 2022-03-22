@@ -1,36 +1,44 @@
 import Image from "next/image";
 import { useState } from "react";
+import Pricechart from "./pricechart";
 
-export default function CoinPrice({ name, value }) {
+export default function CoinPrice({ name, value, index }) {
   const [text, setText] = useState("");
 
   const submitBuy = async () => {
     const url = "/api/trade/" + name + "/usd/" + text;
     const response = await fetch(url);
+    setText("");
   };
 
   const submitSell = async () => {
-    const url = "/api/trade/" + "/usd/" + name + "/" + text;
+    const url = "/api/trade/" + "usd/" + name + "/" + text;
     const response = await fetch(url);
+    setText("");
   };
 
+  const img_url = "/img/" + name + ".png";
   return (
     <div className="CoinPrice">
       <div className="left">
         <div className="info">
+          <Image src={img_url} width={25} height={25} />
           {name} {value} $
         </div>
-        <Image src="/img/ex.png" width={600} height={400} />
+        <div className="chart">
+          <Pricechart name={name} index={index} />
+        </div>
       </div>
       <div className="right">
         <form>
-          <p>Quantité</p>
+          <p>Trade :</p>
           <input
             type="text"
             name="quantite"
             id="quantite"
             placeholder="Amount to trade"
             size="80%"
+            value={text}
             onChange={(e) => setText(e.target.value)}
           />
         </form>

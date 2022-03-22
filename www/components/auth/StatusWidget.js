@@ -19,10 +19,12 @@ function StatusWidget() {
       )}
 
       {session && (
-        <a>
-          <button onClick={logoutHandler}>Logout</button>
+        <div>
           <Link href="/account/profile">{session.user.name}</Link>
-        </a>
+          <button className="LogoutStatusWidget" onClick={logoutHandler}>
+            Logout
+          </button>
+        </div>
       )}
     </div>
   );
