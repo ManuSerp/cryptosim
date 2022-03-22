@@ -37,8 +37,10 @@ export default async function handler(req, res) {
   }
   //check price
   let price;
-  if (req.query.trade[1] === "usd") {
-    price = await fetch(process.env.ABS_URL + "/api/crypto/usd");
+  if (req.query.trade[0] === "eur") {
+    price = await fetch(
+      process.env.ABS_URL + "/api/crypto/" + req.query.trade[1]
+    );
   } else {
     price = await fetch(
       process.env.ABS_URL + "/api/crypto/" + req.query.trade[0]
@@ -49,14 +51,14 @@ export default async function handler(req, res) {
 
   let from = req.query.trade[1];
   let value_to_pay;
-  if (req.query.trade[1] === "usd") {
-    value_to_pay = req.query.trade[2] / json[req.query.trade[0]];
+  if (req.query.trade[0] === "eur") {
+    value_to_pay = req.query.trade[2] / json["eur"];
   } else {
     value_to_pay = json[from] * req.query.trade[2];
   }
 
   if (result[from] && result[from] >= value_to_pay) {
-    //upadte
+    //update
     let coins_after = result[from] - value_to_pay;
     let new_coins = req.query.trade[2];
 
