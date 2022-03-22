@@ -1,6 +1,5 @@
 import clientPromise from "../../../../lib/mongodb";
 import { getSession } from "next-auth/react";
-import { sendResponse } from "next/dist/server/image-optimizer";
 
 const symbols = require("../../../../data/symbols.json");
 
