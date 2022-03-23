@@ -8,6 +8,7 @@ export default function CoinPrice({ name, value, index }) {
   const submitBuy = async () => {
     const url = "/api/trade/" + name + "/eur/" + text;
     const response = await fetch(url);
+
     setText("");
   };
 
