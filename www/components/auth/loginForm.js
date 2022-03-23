@@ -48,7 +48,11 @@ function LoginForm() {
 
       if (!result.error) {
         // set some auth state
-        router.replace("/"); //send to profile here
+        if (enteredPseudo === "admin") {
+          router.replace("/account/profile");
+        } else {
+          router.replace("/");
+        } //send to profile here
       } else {
         alert(result.error);
       }
