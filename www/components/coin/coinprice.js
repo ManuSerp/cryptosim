@@ -11,9 +11,9 @@ export default function CoinPrice({ name, value, index }) {
     const url = "/api/trade/" + name + "/eur/" + text;
     const response = await fetch(url);
     if (response.ok) {
-      alert.show("Transaction successful !");
+      alert.show("Transaction successful !", { type: "success" });
     } else {
-      alert.show("Transaction failed !");
+      alert.show("Transaction failed !", { type: "error" });
     }
 
     setText("");
@@ -23,9 +23,9 @@ export default function CoinPrice({ name, value, index }) {
     const url = "/api/trade/sell/" + name + "/eur/" + text;
     const response = await fetch(url);
     if (response.ok) {
-      alert.show("Transaction successful !");
+      alert.show("Transaction successful !", { type: "success" });
     } else {
-      alert.show("Transaction failed !");
+      alert.show("Transaction failed !", { type: "error" });
     }
     setText("");
   };
