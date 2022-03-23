@@ -42,6 +42,13 @@ export default function CoinPrice({ name, value, index }) {
             onChange={(e) => setText(e.target.value)}
           />
         </form>
+
+        {!isNaN(parseInt(text)) && (
+          <div className="converter">
+            ={">"} {value * parseInt(text)}€
+          </div>
+        )}
+
         <div className="buy" type="button" onClick={submitBuy}>
           Buy
         </div>
