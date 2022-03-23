@@ -30,6 +30,22 @@ export default function CoinPrice({ name, value, index }) {
     setText("");
   };
 
+  const css = (but) => {
+    if (but === dayInter) {
+      return {
+        backgroundColor: "#f5b445",
+        color: "white",
+        "border-radius": "15px",
+        padding: "5px",
+        "margin-right": "0",
+        "margin-left": "0",
+        "font-weight": "bold",
+        display: "block",
+      };
+    }
+    return {};
+  };
+
   const img_url = "/img/" + name + ".png";
   return (
     <div className="CoinPrice">
@@ -44,6 +60,7 @@ export default function CoinPrice({ name, value, index }) {
               id="but-hour"
               className="time-but"
               type="button"
+              style={css(0.0417)}
               onClick={() => {
                 setDayInter(0.0417);
               }}
@@ -53,6 +70,7 @@ export default function CoinPrice({ name, value, index }) {
             <div
               id="but-day"
               className="time-but"
+              style={css(1)}
               type="button"
               onClick={() => {
                 setDayInter(1);
@@ -62,6 +80,7 @@ export default function CoinPrice({ name, value, index }) {
             </div>
             <div
               id="but-week"
+              style={css(7)}
               className="time-but"
               type="button"
               onClick={() => {
@@ -74,6 +93,7 @@ export default function CoinPrice({ name, value, index }) {
               id="but-month"
               className="time-but"
               type="button"
+              style={css(31)}
               onClick={() => {
                 setDayInter(31);
               }}
@@ -81,6 +101,7 @@ export default function CoinPrice({ name, value, index }) {
               1M
             </div>
             <div
+              style={css(365)}
               id="but-year"
               className="time-but"
               type="button"
