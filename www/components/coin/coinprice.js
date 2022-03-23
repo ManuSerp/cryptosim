@@ -12,7 +12,7 @@ export default function CoinPrice({ name, value, index }) {
   };
 
   const submitSell = async () => {
-    const url = "/api/trade/" + "eur/" + name + "/" + text;
+    const url = "/api/trade/sell/" + name + "/eur/" + text;
     const response = await fetch(url);
     setText("");
   };
@@ -42,6 +42,13 @@ export default function CoinPrice({ name, value, index }) {
             onChange={(e) => setText(e.target.value)}
           />
         </form>
+
+        {!isNaN(parseFloat(text)) && (
+          <div className="converter">
+            ={">"} {value * parseFloat(text)}€
+          </div>
+        )}
+
         <div className="buy" type="button" onClick={submitBuy}>
           Buy
         </div>

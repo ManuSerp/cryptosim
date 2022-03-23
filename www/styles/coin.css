@@ -39,11 +39,15 @@
   background-color: #282a36;
   color: #3bb54a;
   border-radius: 15px;
-  padding: 5px;
   font-size: x-large;
-  margin: 10px;
   cursor: pointer;
-  width: 75%;
+  width: 60%;
+  padding: 1%;
+  margin: 2%;
+}
+
+.converter {
+  margin: 3%;
 }
 
 .buy:hover {
@@ -55,11 +59,11 @@
   background-color: #282a36;
   color: var(--red);
   border-radius: 15px;
-  padding: 5px;
   font-size: x-large;
-  margin: 10px;
   cursor: pointer;
-  width: 75%;
+  width: 60%;
+  padding: 1%;
+  margin: 2%;
 }
 
 .sell:hover {
