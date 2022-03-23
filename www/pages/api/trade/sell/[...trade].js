@@ -1,11 +1,11 @@
 import { getSession } from "next-auth/react";
-import clientPromise from "../../../lib/mongodb";
+import clientPromise from "../../../../lib/mongodb";
 
-const symbols = require("../../../data/symbols.json");
+const symbols = require("../../../../data/symbols.json");
 
-//structure of the request: achat/from/volume
-//achat: symbols
-//from: symbol
+//structure of the request: vente/vers/volume
+//vente: symbols
+//vers: symbol
 //ex: /btc/usd/5
 
 async function createHisto(pseudo, c1, c2, amount1, amount2, date_u, client) {
@@ -37,39 +37,35 @@ export default async function handler(req, res) {
   }
   //check price
   let price;
-  if (req.query.trade[0] === "eur") {
-    price = await fetch(
-      process.env.ABS_URL + "/api/crypto/" + req.query.trade[1]
-    );
+  let vers = req.query.trade[1];
+  let vente = req.query.trade[0];
+  if (vente === "eur") {
+    price = await fetch(process.env.ABS_URL + "/api/crypto/" + vers);
   } else {
-    price = await fetch(
-      process.env.ABS_URL + "/api/crypto/" + req.query.trade[0]
-    );
+    price = await fetch(process.env.ABS_URL + "/api/crypto/" + vente);
   }
 
   const json = await price.json();
 
-  let from = req.query.trade[1];
-  let value_to_pay;
-  if (req.query.trade[0] === "eur") {
-    value_to_pay = req.query.trade[2] / json["eur"];
+  let value_to_credit;
+  if (vente === "eur") {
+    value_to_credit = req.query.trade[2] / json["eur"];
   } else {
-    value_to_pay = json[from] * req.query.trade[2];
+    value_to_credit = json[vers] * req.query.trade[2];
   }
 
-  if (result[from] && result[from] >= value_to_pay) {
+  if (result[vente] && result[vente] >= req.query.trade[2]) {
     //update
-    let coins_after = result[from] - value_to_pay;
-    let new_coins = req.query.trade[2];
+    let coins_after = result[vente] - req.query.trade[2];
+    let new_coins = value_to_credit;
 
     let pipe = {};
-    pipe[from] = coins_after;
+    pipe[vente] = coins_after;
 
-    if (!result[req.query.trade[0]]) {
-      pipe[req.query.trade[0]] = parseFloat(new_coins);
+    if (!result[vers]) {
+      pipe[vers] = parseFloat(new_coins);
     } else {
-      pipe[req.query.trade[0]] =
-        parseFloat(new_coins) + result[req.query.trade[0]];
+      pipe[vers] = parseFloat(new_coins) + result[vers];
     }
     const flag_update = await wlt.updateOne(
       { psd: sess.user.name },
@@ -83,17 +79,17 @@ export default async function handler(req, res) {
     let ms = Date.now();
     let h = await createHisto(
       sess.user.name,
-      req.query.trade[0],
-      from,
+      vers,
+      vente,
       new_coins,
-      value_to_pay,
+      req.query.trade[2],
       ms,
       client
     );
     //
     let pipeRep = {};
-    pipeRep[from] = value_to_pay;
-    pipeRep[req.query.trade[0]] = parseFloat(new_coins);
+    pipeRep[vente] = req.query.trade[2];
+    pipeRep[vers] = parseFloat(new_coins);
 
     res.status(205).json(pipeRep);
   } else {
