@@ -2,12 +2,14 @@
   text-align: center;
   border: 2px solid var(--grey);
   border-radius: 8px;
-  margin: 2px;
+  gap: 2%;
+  margin: 2%;
+  padding: 1%;
 }
 
 .LeaderBoard {
   border: 2px solid var(--grey);
   border-radius: 8px;
-  margin: 10px;
-  padding: 30px;
+  margin: 2%;
+  padding: 5%;
 }
