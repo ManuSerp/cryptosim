@@ -20,13 +20,13 @@ async function handler(req, res) {
       res.status(422).json({ message: "ERROR PROBABLY NO USER" });
       return;
     } else {
-      const flag_update = await wlt.updateOne(
+      const flag_update = await user.updateOne(
         { psd: pseudo },
         {
           $set: { pwd: await hash(password, 12) },
         }
       );
-      res.status(422).json({ message: "Done" });
+      res.status(201).json({ message: "Done" });
       return;
     }
 
