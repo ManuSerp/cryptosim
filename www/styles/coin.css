@@ -46,6 +46,26 @@
   margin: 2%;
 }
 
+.timeSlider {
+  display: flex;
+  border: 2px solid var(--grey);
+  border-radius: 15px;
+  margin: 1%;
+  align-items: center;
+  padding: 1%;
+  gap: 10px;
+}
+
+.time-but {
+  cursor: pointer;
+}
+
+.top-chart {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .converter {
   margin: 3%;
 }
