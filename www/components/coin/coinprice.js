@@ -43,9 +43,9 @@ export default function CoinPrice({ name, value, index }) {
           />
         </form>
 
-        {!isNaN(parseInt(text)) && (
+        {!isNaN(parseFloat(text)) && (
           <div className="converter">
-            ={">"} {value * parseInt(text)}€
+            ={">"} {value * parseFloat(text)}€
           </div>
         )}
 
