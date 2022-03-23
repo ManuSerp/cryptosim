@@ -22,6 +22,18 @@ export default function BalanceLeaderBoard() {
     return <div>loading...</div>;
   }
 
+  const Balance = () => {
+    try {
+      const b =
+        Math.round(
+          data.find(({ psd }) => psd == session.user.name).score * 1000
+        ) / 1000;
+      return b;
+    } catch (error) {
+      return 0;
+    }
+  };
+
   return (
     <div className="balance-leaderboard">
       <div className="LeaderBoard">
@@ -31,10 +43,7 @@ export default function BalanceLeaderBoard() {
           {session && (
             <div>
               Balance :{"  "}
-              {Math.round(
-                data.find(({ psd }) => psd == session.user.name).score * 1000
-              ) / 1000}
-              €
+              {Balance()}€
             </div>
           )}
         </div>
