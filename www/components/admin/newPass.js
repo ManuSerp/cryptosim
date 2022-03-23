@@ -36,7 +36,7 @@ function NewPass() {
       setRes(res.message);
     } catch (error) {
       console.log(error);
-      setRes("error");
+      setRes(error);
     }
   }
 
