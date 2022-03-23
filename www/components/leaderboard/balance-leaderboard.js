@@ -34,7 +34,7 @@ export default function BalanceLeaderBoard() {
               {Math.round(
                 data.find(({ psd }) => psd == session.user.name).score * 1000
               ) / 1000}
-              $
+              €
             </div>
           )}
         </div>
