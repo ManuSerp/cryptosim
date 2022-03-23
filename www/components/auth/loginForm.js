@@ -10,6 +10,7 @@ async function createUser(pseudo, password) {
       "Content-Type": "application/json",
     },
   });
+  const cr = await fetch("/api/cron");
 
   const data = await response.json();
 
