@@ -15,7 +15,7 @@ export async function searchWallet() {
       if (key !== "psd" && key !== "_id") {
         let value = result[i][key];
 
-        if (key !== "usd") {
+        if (key !== "eur") {
           let url = "https://api.coingecko.com/api/v3/coins/" + symbols[key];
 
           let response = await fetch(url);
@@ -23,7 +23,7 @@ export async function searchWallet() {
 
           json = json.market_data.current_price;
 
-          value = value * json.usd;
+          value = value * json.eur;
         }
         actif.push(value);
       }

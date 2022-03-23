@@ -14,28 +14,6 @@ export default async function handler(req, res) {
     psd: body.pseudo,
   });
 
-  let actif = [];
-
-  for (let key in result) {
-    if (key !== "psd" && key !== "_id") {
-      let value = result[key];
-      if (key !== "usd") {
-        let price = await fetch(
-          process.env.ABS_URL + "/api/crypto/" + symbols[key]
-        );
-        let json = await price.json();
-
-        value = value * json["usd"];
-      }
-      actif.push(value);
-    }
-  }
-
-  const sumActif = actif.reduce(
-    (previousValue, currentValue) => previousValue + currentValue,
-    0
-  );
-
-  let reponse = { wlt: result, total: sumActif };
+  let reponse = { wlt: result };
   res.status(200).json(reponse);
 }

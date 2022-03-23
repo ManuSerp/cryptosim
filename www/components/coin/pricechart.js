@@ -33,7 +33,7 @@ export default function Pricechart({ name, index }) {
   const url_price =
     "https://api.coingecko.com/api/v3/coins/" +
     coinlistjson[name] +
-    "/market_chart?vs_currency=usd&days=7&interval=daily";
+    "/market_chart?vs_currency=eur&days=7&interval=daily";
   const { data, error } = useSWR(url_price, fetcherChart, {
     refreshInterval: 3600000,
   });
