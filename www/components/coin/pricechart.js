@@ -26,14 +26,21 @@ const fetcherChart = async (url) => {
   return response;
 };
 
+const inter = { 1: "hour", 7: "hour", 30: "daily", 360: "weekly" };
+
 const coinlistjson = require("../../data/symbols.json");
 const colors = require("../../data/colors.json");
 
-export default function Pricechart({ name, index }) {
+export default function Pricechart({ name, vs, index, timeInter }) {
   const url_price =
     "https://api.coingecko.com/api/v3/coins/" +
     coinlistjson[name] +
-    "/market_chart?vs_currency=eur&days=7&interval=daily";
+    "/market_chart?vs_currency=" +
+    vs +
+    "&days=" +
+    timeInter +
+    "&interval=" +
+    inter[timeInter];
   const { data, error } = useSWR(url_price, fetcherChart, {
     refreshInterval: 3600000,
   });
@@ -50,10 +57,16 @@ export default function Pricechart({ name, index }) {
   const time = [];
   const value = [];
 
+  const dateShown = (date) => {
+    if (timeInter === 1) {
+      return date.getHours() + ":" + date.getMinutes();
+    }
+    return date.getDate() + "/" + date.getMonth();
+  };
+
   prices.forEach((e) => {
     var date = new Date(e[0]);
-    const dateShown = date.getDate() + "/" + date.getMonth();
-    time.push(dateShown);
+    time.push(dateShown(date));
     value.push(e[1]);
   });
 

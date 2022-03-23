@@ -5,6 +5,7 @@ import { useAlert } from "react-alert";
 
 export default function CoinPrice({ name, value, index }) {
   const [text, setText] = useState("");
+  const [timeInter, setTimeInter] = useState(1);
   const alert = useAlert();
 
   const submitBuy = async () => {
@@ -34,12 +35,57 @@ export default function CoinPrice({ name, value, index }) {
   return (
     <div className="CoinPrice">
       <div className="left">
-        <div className="info">
-          <Image src={img_url} width={25} height={25} />
-          {name} {value} €
+        <div className="top-chart">
+          <div className="info">
+            <Image src={img_url} width={25} height={25} />
+            {name} {value} €
+          </div>
+          <div className="timeSlider">
+            <div
+              className="time-but"
+              type="button"
+              onClick={() => {
+                setTimeInter(1);
+              }}
+            >
+              24H
+            </div>
+            <div
+              className="time-but"
+              type="button"
+              onClick={() => {
+                setTimeInter(7);
+              }}
+            >
+              1W
+            </div>
+            <div
+              className="time-but"
+              type="button"
+              onClick={() => {
+                setTimeInter(30);
+              }}
+            >
+              1M
+            </div>
+            <div
+              className="time-but"
+              type="button"
+              onClick={() => {
+                setTimeInter(360);
+              }}
+            >
+              1Y
+            </div>
+          </div>
         </div>
         <div className="chart">
-          <Pricechart name={name} index={index} />
+          <Pricechart
+            name={name}
+            vs={"eur"}
+            index={index}
+            timeInter={timeInter}
+          />
         </div>
       </div>
       <div className="right">
