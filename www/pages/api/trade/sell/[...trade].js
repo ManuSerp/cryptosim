@@ -1,7 +1,7 @@
 import { getSession } from "next-auth/react";
-import clientPromise from "../../../lib/mongodb";
+import clientPromise from "../../../../lib/mongodb";
 
-const symbols = require("../../../data/symbols.json");
+const symbols = require("../../../../data/symbols.json");
 
 //structure of the request: vente/vers/volume
 //vente: symbols
