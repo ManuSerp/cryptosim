@@ -1,13 +1,20 @@
 import Image from "next/image";
 import { useState } from "react";
 import Pricechart from "./pricechart";
+import { useAlert } from "react-alert";
 
 export default function CoinPrice({ name, value, index }) {
   const [text, setText] = useState("");
+  const alert = useAlert();
 
   const submitBuy = async () => {
     const url = "/api/trade/" + name + "/eur/" + text;
     const response = await fetch(url);
+    if (response.ok) {
+      alert.show("Transaction successful !");
+    } else {
+      alert.show("Transaction failed !");
+    }
 
     setText("");
   };
@@ -15,6 +22,11 @@ export default function CoinPrice({ name, value, index }) {
   const submitSell = async () => {
     const url = "/api/trade/sell/" + name + "/eur/" + text;
     const response = await fetch(url);
+    if (response.ok) {
+      alert.show("Transaction successful !");
+    } else {
+      alert.show("Transaction failed !");
+    }
     setText("");
   };
 
