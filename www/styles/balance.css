@@ -2,5 +2,7 @@
   text-align: center;
   border: 2px solid var(--grey);
   border-radius: 8px;
-  margin: 10px;
+  gap: 2%;
+  margin: 2%;
+  padding: 1%;
 }
