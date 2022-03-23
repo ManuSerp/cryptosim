@@ -35,12 +35,6 @@ export default function CoinPrice({ name, value, index }) {
       return {
         backgroundColor: "#f5b445",
         color: "white",
-        "border-radius": "15px",
-        padding: "5px",
-        "margin-right": "0",
-        "margin-left": "0",
-        "font-weight": "bold",
-        display: "block",
       };
     }
     return {};
