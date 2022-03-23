@@ -1,6 +1,22 @@
 import { useState, useRef } from "react";
-import clientPromise from "../../lib/mongodb";
-import { hash } from "bcryptjs";
+
+async function changePass(pseudo, password) {
+  const response = await fetch("/api/admin/chgpass", {
+    method: "POST",
+    body: JSON.stringify({ pseudo, password }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data.message || "Something went wrong!");
+  }
+
+  return data;
+}
 
 function NewPass() {
   const [resEnd, setRes] = useState();
@@ -16,23 +32,8 @@ function NewPass() {
     // optional: Add validation
 
     try {
-      const client = await clientPromise;
-      const user = await client.db().collection("user_id");
-
-      const checkExisting = await user.findOne({ pseudo: enteredPseudo });
-      //Send error response if duplicate user is found
-      // FAIRE MONGO DANS UNE API ### A RECHECK QUE C4EST BIEN ADMIN SINON TEJ
-      if (!checkExisting) {
-        setRes("ERROR PROBABLY NO USER");
-      } else {
-        const flag_update = await wlt.updateOne(
-          { psd: pseudoInputRef },
-          {
-            $set: { pwd: await hash(password, 12) },
-          }
-        );
-        setRes("Done");
-      }
+      const res = await changePass(enteredPseudo, enteredPass);
+      setRes(res.message);
     } catch (error) {
       console.log(error);
       setRes("error");
