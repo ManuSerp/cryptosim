@@ -19,7 +19,6 @@ function Navbar() {
         <Link href="/about">
           <a className="nav-about">About</a>
         </Link>
-
         <StatusWidget />
       </div>
     </nav>

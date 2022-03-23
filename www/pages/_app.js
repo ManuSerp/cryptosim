@@ -10,6 +10,7 @@ import AlertTemplate from "react-alert-template-basic";
 import Layout from "../components/layout/layout";
 
 import "../styles/globals.css";
+
 const options = {
   // you can also just use 'bottom center'
   position: positions.BOTTOM_CENTER,

@@ -10,6 +10,7 @@
   justify-content: center;
   gap: 10px;
   margin: 10px;
+  text-transform: uppercase;
 }
 
 .CoinPrice {
@@ -52,12 +53,16 @@
   border-radius: 15px;
   margin: 1%;
   align-items: center;
-  padding: 1%;
-  gap: 10px;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 
 .time-but {
   cursor: pointer;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .top-chart {
@@ -88,4 +93,22 @@
 
 .sell:hover {
   background-color: rgba(82, 82, 86, 255);
+}
+
+form {
+  margin: 5%;
+  height: 10%;
+}
+
+.form-text {
+  color: #333;
+  font-size: 1.2rem;
+  margin: 0 auto;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  width: 60%;
+  display: block;
+  border-bottom: 0.3rem solid transparent;
+  transition: all 0.3s;
 }

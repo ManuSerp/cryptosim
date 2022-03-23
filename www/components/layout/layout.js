@@ -6,6 +6,7 @@ function Layout({ children }) {
     <>
       <Head>
         <title>Cryptosim</title>
+        <link rel="icon" href="/img/cryptos.png" />
       </Head>
       <div className="content">
         <div className="layout-wrapper">
