@@ -16,6 +16,8 @@
     "next": "12.1.0",
     "next-auth": "^4.2.1",
     "react": "17.0.2",
+    "react-alert": "^7.0.3",
+    "react-alert-template-basic": "^1.0.2",
     "react-bootstrap": "^2.1.2",
     "react-chartjs-2": "^4.0.1",
     "react-dom": "17.0.2",
