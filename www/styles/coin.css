@@ -52,17 +52,20 @@
   border: 2px solid var(--grey);
   border-radius: 15px;
   margin: 1%;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: center;
   padding-left: 3%;
   padding-right: 3%;
   padding-top: 1%;
   padding-bottom: 1%;
+  gap: 5%;
 }
 
 .time-but {
   cursor: pointer;
-  margin-right: 10px;
-  margin-left: 10px;
+  border-radius: 15px;
+  font-weight: bold;
+  padding: 2%;
 }
 
 .top-chart {
