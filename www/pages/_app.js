@@ -1,5 +1,10 @@
 import { SessionProvider } from "next-auth/react";
-import { transitions, positions, Provider as AlertProvider } from "react-alert";
+import {
+  transitions,
+  positions,
+  types,
+  Provider as AlertProvider,
+} from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
 
 import Layout from "../components/layout/layout";
