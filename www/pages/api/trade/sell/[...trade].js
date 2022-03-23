@@ -91,8 +91,8 @@ export default async function handler(req, res) {
     pipeRep[vente] = req.query.trade[2];
     pipeRep[vers] = parseFloat(new_coins);
 
-    res.status(200).json(pipeRep);
+    res.status(205).json(pipeRep);
   } else {
-    res.status(200).json({ error: "not coins enough" });
+    res.status(403).json({ error: "not coins enough" });
   }
 }
