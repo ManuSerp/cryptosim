@@ -5,7 +5,7 @@ import { useAlert } from "react-alert";
 
 export default function CoinPrice({ name, value, index }) {
   const [text, setText] = useState("");
-  const [timeInter, setTimeInter] = useState(1);
+  const [dayInter, setDayInter] = useState(1);
   const alert = useAlert();
 
   const submitBuy = async () => {
@@ -16,7 +16,6 @@ export default function CoinPrice({ name, value, index }) {
     } else {
       alert.show("Transaction failed !", { type: "error" });
     }
-
     setText("");
   };
 
@@ -42,37 +41,51 @@ export default function CoinPrice({ name, value, index }) {
           </div>
           <div className="timeSlider">
             <div
+              id="but-hour"
               className="time-but"
               type="button"
               onClick={() => {
-                setTimeInter(1);
+                setDayInter(0.0417);
+              }}
+            >
+              1H
+            </div>
+            <div
+              id="but-day"
+              className="time-but"
+              type="button"
+              onClick={() => {
+                setDayInter(1);
               }}
             >
               24H
             </div>
             <div
+              id="but-week"
               className="time-but"
               type="button"
               onClick={() => {
-                setTimeInter(7);
+                setDayInter(7);
               }}
             >
               1W
             </div>
             <div
+              id="but-month"
               className="time-but"
               type="button"
               onClick={() => {
-                setTimeInter(30);
+                setDayInter(31);
               }}
             >
               1M
             </div>
             <div
+              id="but-year"
               className="time-but"
               type="button"
               onClick={() => {
-                setTimeInter(360);
+                setDayInter(365);
               }}
             >
               1Y
@@ -84,7 +97,7 @@ export default function CoinPrice({ name, value, index }) {
             name={name}
             vs={"eur"}
             index={index}
-            timeInter={timeInter}
+            dayInter={dayInter}
           />
         </div>
       </div>
