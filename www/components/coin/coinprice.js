@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
+import Popupbuy from "../popups/popupbuy";
+import Popupsell from "../popups/popupsell";
 import Pricechart from "./pricechart";
 
 export default function CoinPrice({ name, value, index }) {
@@ -42,11 +44,13 @@ export default function CoinPrice({ name, value, index }) {
             onChange={(e) => setText(e.target.value)}
           />
         </form>
-        <div className="buy" type="button" onClick={submitBuy}>
+        <div data-modalbuy-target="#modalbuy" className="buy" type="button" onClick={submitBuy}>
           Buy
+          <Popupbuy/>
         </div>
-        <div className="sell" type="button" onClick={submitSell}>
+        <div data-modalsell-target="#modalsell" className="sell" type="button" onClick={submitSell}>
           Sell
+          <Popupsell/>
         </div>
       </div>
     </div>
