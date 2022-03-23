@@ -53,7 +53,7 @@ export default function CoinPrice({ name, value, index }) {
         <div className="top-chart">
           <div className="info">
             <Image src={img_url} width={25} height={25} />
-            {name} {value} €
+            {name} : {value} €
           </div>
           <div className="timeSlider">
             <div
@@ -123,24 +123,24 @@ export default function CoinPrice({ name, value, index }) {
         </div>
       </div>
       <div className="right">
+        <p>Trade :</p>
         <form>
-          <p>Trade :</p>
           <input
             type="text"
             name="quantite"
+            class="form-text"
             id="quantite"
             placeholder="Amount to trade"
             size="80%"
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
+          {!isNaN(parseFloat(text)) && (
+            <div className="converter">
+              ={">"} {value * parseFloat(text)}€
+            </div>
+          )}
         </form>
-
-        {!isNaN(parseFloat(text)) && (
-          <div className="converter">
-            ={">"} {value * parseFloat(text)}€
-          </div>
-        )}
 
         <div className="buy" type="button" onClick={submitBuy}>
           Buy
