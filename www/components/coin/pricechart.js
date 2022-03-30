@@ -37,7 +37,13 @@ const inter = {
 const coinlistjson = require("../../data/symbols.json");
 const colors = require("../../data/colors.json");
 
-export default function Pricechart({ name, vs, index, dayInter }) {
+export default function Pricechart({
+  name,
+  vs,
+  index,
+  dayInter,
+  setFirstPrice,
+}) {
   const url_price =
     "https://api.coingecko.com/api/v3/coins/" +
     coinlistjson[name] +
@@ -81,6 +87,8 @@ export default function Pricechart({ name, vs, index, dayInter }) {
     time.push(dateShown(date));
     value.push(e[1]);
   });
+
+  setFirstPrice(value[0]);
 
   const color = colors.colors[index % colors.colors.length];
 

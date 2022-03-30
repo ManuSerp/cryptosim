@@ -6,6 +6,7 @@ import { useAlert } from "react-alert";
 export default function CoinPrice({ name, value, index }) {
   const [text, setText] = useState("");
   const [dayInter, setDayInter] = useState(1);
+  const [firstPrice, setFirstPrice] = useState(value);
   const alert = useAlert();
 
   const submitBuy = async () => {
@@ -30,7 +31,20 @@ export default function CoinPrice({ name, value, index }) {
     setText("");
   };
 
-  const css = (but) => {
+  const css_percent = (value) => {
+    if (value >= 0) {
+      return {
+        color: "green",
+        content: "+",
+      };
+    } else {
+      return {
+        color: "red",
+      };
+    }
+  };
+
+  const css_but = (but) => {
     if (but === dayInter) {
       return {
         backgroundColor: "#f5b445",
@@ -48,13 +62,19 @@ export default function CoinPrice({ name, value, index }) {
           <div className="info">
             <Image src={img_url} width={25} height={25} />
             {name} : {value} €
+            <span className="percent" style={css_percent(value - firstPrice)}>
+              {value - firstPrice >= 0 && <span>+</span>}
+              {Math.round(((value - firstPrice) * 100 * 100) / firstPrice) /
+                100}
+              %
+            </span>
           </div>
           <div className="timeSlider">
             <div
               id="but-hour"
               className="time-but"
               type="button"
-              style={css(0.0417)}
+              style={css_but(0.0417)}
               onClick={() => {
                 setDayInter(0.0417);
               }}
@@ -64,7 +84,7 @@ export default function CoinPrice({ name, value, index }) {
             <div
               id="but-day"
               className="time-but"
-              style={css(1)}
+              style={css_but(1)}
               type="button"
               onClick={() => {
                 setDayInter(1);
@@ -74,7 +94,7 @@ export default function CoinPrice({ name, value, index }) {
             </div>
             <div
               id="but-week"
-              style={css(7)}
+              style={css_but(7)}
               className="time-but"
               type="button"
               onClick={() => {
@@ -87,7 +107,7 @@ export default function CoinPrice({ name, value, index }) {
               id="but-month"
               className="time-but"
               type="button"
-              style={css(31)}
+              style={css_but(31)}
               onClick={() => {
                 setDayInter(31);
               }}
@@ -95,7 +115,7 @@ export default function CoinPrice({ name, value, index }) {
               1M
             </div>
             <div
-              style={css(365)}
+              style={css_but(365)}
               id="but-year"
               className="time-but"
               type="button"
@@ -113,6 +133,7 @@ export default function CoinPrice({ name, value, index }) {
             vs={"eur"}
             index={index}
             dayInter={dayInter}
+            setFirstPrice={setFirstPrice}
           />
         </div>
       </div>
