@@ -14,6 +14,11 @@ function About() {
       échangées et pourra donc vendre et acheter des coins. Il y aura aussi une
       fonctionalité qui permettra de classer les différents utilisateurs selon
       leurs gains. Ce classement sera visible a tous les utilisateurs.
+      <div>
+        <a href="https://github.com/ManuSerp/cryptosim/blob/main/services.md">
+          Documentation
+        </a>
+      </div>
     </div>
   );
 }
