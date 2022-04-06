@@ -16,8 +16,8 @@ jobs:
         env:
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
           JWT_SECRET: ${{ secrets.JWT_SECRET }}
-        run: echo "The API key is:${{env.MONGODB_URI}}"
         with:
           working-directory: ./www
+          run: echo "The API key is:${{env.MONGODB_URI}}"
           build: npm run build
           start: npm start
