@@ -94,6 +94,8 @@ Structure:
 cryptosim.vercel.app/api/db/leader_board
 
 ```
+Exemple:
+![png](doc.png)
 Renvoie un JSON array du Leaderboard dans l'ordre des score décroissants 
 
 - JSON Historique
