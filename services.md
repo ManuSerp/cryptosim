@@ -87,11 +87,11 @@ Renvoi un JSON du wallet de l'utilisateur
 
 - JSON Leaderboard
 ```
-cryptosim.vercel.app/api/db/leaderboard
+cryptosim.vercel.app/api/db/leader_board
 ```
 Structure:
 ```
-cryptosim.vercel.app/api/db/leaderboard
+cryptosim.vercel.app/api/db/leader_board
 
 ```
 Renvoie un JSON array du Leaderboard dans l'ordre des score décroissants 
