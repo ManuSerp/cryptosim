@@ -10,7 +10,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Cypress run
-        working-directory: ./www
         uses: cypress-io/github-action@v2
         with:
           build: npm run build
