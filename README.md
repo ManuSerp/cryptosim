@@ -8,7 +8,9 @@ Il y aura aussi une fonctionalité qui permettra de classer les différents util
 
 Lien vers le site: 
 https://cryptosim.vercel.app/
-Ebauche du template du site qui indique grossièrement les différentes fonctionnalités et leur disposition.
-![image](https://user-images.githubusercontent.com/85102352/155300978-85bcf744-df01-4cba-a454-48301a3317f6.png)
+
+Photo du site web:
+![Screenshot from 2022-03-23 08-57-06](https://user-images.githubusercontent.com/85102352/161929112-e83e920d-4b32-41d5-a91a-8b7b4f3c67dc.png)
+
 
 
