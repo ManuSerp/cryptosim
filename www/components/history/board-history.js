@@ -36,8 +36,8 @@ export default function BoardHistory() {
           )}
         </div>
         <p>Hsitory :</p>
-        {data.map(({ psd, achat, vente, q1, q2, vente }, i) => (
-          <Transaction key={i} rank={i + 1} name={psd} balance={score} />
+        {data.map(({ achat, vente, q1, q2, date }, i) => (
+          <Transaction  achat={achat} vente={vente} q1={q1} q2={q2} date={date}/>
         ))}
       </div>
     </div>
