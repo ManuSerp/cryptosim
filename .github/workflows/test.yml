@@ -12,11 +12,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: add env
-        env:
-          MONGODB_URI: ${{ secrets.MONGODB_URI }}
-          JWT_SECRET: ${{ secrets.JWT_SECRET }}
         working-directory: ./www
-        run: echo "The API key is:${{env.MONGODB_URI}}"
+        run: echo "MONGODB_URI=${{ secrets.MONGODB_URI }}\n"
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
