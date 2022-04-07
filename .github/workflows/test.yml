@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v2
       - name: add env
         working-directory: ./www
-        run: echo "MONGODB_URI=${{ secrets.MONGODB_URI }}\n"
+        run: echo "MONGODB_URI=${{ secrets.MONGODB_URI }}\n" >> .env.local
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
