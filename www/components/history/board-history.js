@@ -27,6 +27,7 @@ export default function BoardHistory() {
     <div className="board-history">
       <div className="History">
         <div className="total">
+        <p>History</p>
           {loading && <a>LOADING...</a>}
           {!session && !loading && <div>Not Connected</div>}
           {session && (
@@ -36,7 +37,6 @@ export default function BoardHistory() {
             </div>
           )}
         </div>
-        <p>History :</p>
         {data.map(({ achat, vente, q1, q2, date }, i) => (
           <Transaction  achat={achat} vente={vente} q1={q1} q2={q2} date={date}/>
         ))}

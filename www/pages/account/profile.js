@@ -6,11 +6,13 @@ import History from "../../components/history/board-history";
 
 function ProfilePage() {
   return (
-    <div ClassName="Profile">
-      <UserProfile />
-      <Wallet />
-      <History />
-    </div>
+    
+      <div className="Profile">
+        <UserProfile />
+        <Wallet />
+        <History />
+      </div>
+    
   );
 }
 

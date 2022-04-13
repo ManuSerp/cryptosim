@@ -1,5 +1,5 @@
 function timeConverter(UNIX_timestamp){
-    var a = new Date(UNIX_timestamp * 1000);
+    var a = new Date(UNIX_timestamp);
     var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
     var year = a.getFullYear();
     var month = months[a.getMonth()];
@@ -15,8 +15,8 @@ export default function Transaction({ achat, vente, q1, q2, date }) {
     return (
       <>
         <div className="Transaction">
-          <h1>{timeConverter(date)}</h1>
-          Achate de {q1} {achat} au prix de {q2} {vente}
+          <div id="date">{timeConverter(date)}</div>
+          <div>Achat de {q1} {achat} au prix de {Number.parseFloat(q2).toFixed(2)} {vente}</div>
         </div>
       </>
     );
