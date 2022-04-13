@@ -8,6 +8,17 @@ const symbols = require("../../../data/symbols.json");
 //from: symbol
 //ex: /btc/usd/5
 
+/**
+ * Generate history from the transacation in the database
+ * @constructor
+ * @param {string} pseudo - Pseudo of the user.
+ * @param {string} c1 - symbols of buyed coin.
+ * @param {string} c2 - symbols of sold coin.
+ * @param {number} volume1 - volume of the coin 1.
+ * @param {number} volume2 - volume of the  coin 2.
+ * @param {number} date_u - date unix of the transaction.
+ * @param {*} client - MongoDB client.
+ */
 async function createHisto(pseudo, c1, c2, amount1, amount2, date_u, client) {
   const histo = await client.db().collection("historique");
 
@@ -22,7 +33,17 @@ async function createHisto(pseudo, c1, c2, amount1, amount2, date_u, client) {
 
   let result = await histo.insertOne(js);
 }
-
+/**
+ * Make the requested transanction en return the result.
+ * structure of the request: achat/from/volume
+ * achat: symbols
+ * from: symbol
+ * ex: /btc/usd/5
+ * @constructor
+ * @param {*} req
+ * @param {*} res
+ * @returns
+ */
 export default async function handler(req, res) {
   const sess = await getSession({ req });
   //db
