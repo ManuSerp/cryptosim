@@ -21,7 +21,8 @@ export default function BoardHistory() {
   if (!data) {
     return <div>loading...</div>;
   }
-
+  
+  console.log(data);
   return (
     <div className="board-history">
       <div className="History">
@@ -35,7 +36,7 @@ export default function BoardHistory() {
             </div>
           )}
         </div>
-        <p>Hsitory :</p>
+        <p>History :</p>
         {data.map(({ achat, vente, q1, q2, date }, i) => (
           <Transaction  achat={achat} vente={vente} q1={q1} q2={q2} date={date}/>
         ))}

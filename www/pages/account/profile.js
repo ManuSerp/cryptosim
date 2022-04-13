@@ -6,7 +6,7 @@ import History from "../../components/history/board-history";
 
 function ProfilePage() {
   return (
-    <div>
+    <div ClassName="Profile">
       <UserProfile />
       <Wallet />
       <History />
