@@ -1,5 +1,10 @@
 import Image from "next/image";
 
+/**
+ * The CoinCard component renders a single coin card
+ * @param {string} coin - The coin name
+ * @param {number} amount- The value of the coin
+ */
 export default function CoinCard({ coin, amount }) {
   const img_url = "/img/" + coin + ".png";
   return (
