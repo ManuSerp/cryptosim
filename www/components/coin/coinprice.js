@@ -56,7 +56,7 @@ export default function CoinPrice({ name, value, index }) {
 
   const img_url = "/img/" + name + ".png";
   return (
-    <div className="CoinPrice">
+    <div className="CoinPrice" id={"CoinPrice-" + name}>
       <div className="left">
         <div className="top-chart">
           <div className="info">
@@ -143,7 +143,7 @@ export default function CoinPrice({ name, value, index }) {
           <input
             type="text"
             name="quantite"
-            class="form-text"
+            className="form-text"
             id="quantite"
             placeholder="Amount to trade"
             size="80%"

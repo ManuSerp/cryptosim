@@ -6,7 +6,8 @@ export default function CoinCard({ coin, amount }) {
     <div className="coin-card">
       <Image src={img_url} width={25} height={25} />
       <span>
-        {coin} : {Math.round(amount * 10000) / 10000}
+        {coin} :{" "}
+        <span id={"#value-" + coin}>{Math.round(amount * 10000) / 10000}</span>
       </span>
     </div>
   );
