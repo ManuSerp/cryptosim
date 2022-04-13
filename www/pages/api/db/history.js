@@ -9,7 +9,7 @@ export default async function handler(req, res) {
     if (sess) {
         result = await transactions.find({
             pseudo: sess.user.name,
-        }).toArray();
+        }).sort({date:-1}).toArray();
     }
 
     if (!result) {
