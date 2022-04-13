@@ -2,13 +2,17 @@ import { getSession } from "next-auth/react";
 
 import UserProfile from "../../components/profile/user-profile";
 import Wallet from "../../components/wallet/wallet";
+import History from "../../components/history/board-history";
 
 function ProfilePage() {
   return (
-    <div>
-      <UserProfile />
-      <Wallet />
-    </div>
+    
+      <div className="Profile">
+        <UserProfile />
+        <Wallet />
+        <History />
+      </div>
+    
   );
 }
 

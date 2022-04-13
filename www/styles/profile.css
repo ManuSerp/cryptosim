@@ -1,0 +1,28 @@
+.Profile {
+    overflow-y: scroll;
+    height: 85vh;
+}
+.board-history {
+    text-align: center;
+    border: 2px solid var(--grey);
+    border-radius: 8px;
+    margin: 2%;
+}
+
+.total{
+    font-size: 2em;
+}
+
+.Transaction{
+    text-align: center;
+  border: 2px solid var(--grey);
+  border-radius: 8px;
+  justify-content: center;
+  gap: 2%;
+  margin: 2%;
+  padding: 1%;
+}
+
+#date{
+    font-size : 1.5rem;
+}
