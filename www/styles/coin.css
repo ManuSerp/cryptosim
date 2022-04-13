@@ -10,6 +10,7 @@
   justify-content: center;
   gap: 10px;
   margin: 10px;
+  text-transform: uppercase;
 }
 
 .CoinPrice {
@@ -39,11 +40,42 @@
   background-color: #282a36;
   color: #3bb54a;
   border-radius: 15px;
-  padding: 5px;
   font-size: x-large;
-  margin: 10px;
   cursor: pointer;
-  width: 75%;
+  width: 60%;
+  padding: 1%;
+  margin: 2%;
+}
+
+.timeSlider {
+  display: flex;
+  border: 2px solid var(--grey);
+  border-radius: 15px;
+  margin: 1%;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  gap: 5%;
+}
+
+.time-but {
+  cursor: pointer;
+  border-radius: 15px;
+  font-weight: bold;
+  padding: 2%;
+}
+
+.top-chart {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.converter {
+  margin: 3%;
 }
 
 .buy:hover {
@@ -55,13 +87,31 @@
   background-color: #282a36;
   color: var(--red);
   border-radius: 15px;
-  padding: 5px;
   font-size: x-large;
-  margin: 10px;
   cursor: pointer;
-  width: 75%;
+  width: 60%;
+  padding: 1%;
+  margin: 2%;
 }
 
 .sell:hover {
   background-color: rgba(82, 82, 86, 255);
+}
+
+form {
+  margin: 5%;
+  height: 10%;
+}
+
+.form-text {
+  color: #333;
+  font-size: 1.2rem;
+  margin: 0 auto;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  width: 60%;
+  display: block;
+  border-bottom: 0.3rem solid transparent;
+  transition: all 0.3s;
 }

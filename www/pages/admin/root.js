@@ -1,4 +1,5 @@
 import { getSession } from "next-auth/react";
+import NewPass from "../../components/admin/newPass";
 import WalletSeeker from "../../components/admin/walletSeeker";
 
 function AdminPage() {
@@ -7,7 +8,9 @@ function AdminPage() {
       <div>ADMIN PAGE</div>
       <div>
         <WalletSeeker></WalletSeeker>
+        <NewPass />
       </div>
+      <div></div>
     </>
   );
 }

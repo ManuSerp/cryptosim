@@ -10,6 +10,7 @@ async function createUser(pseudo, password) {
       "Content-Type": "application/json",
     },
   });
+  const cr = await fetch("/api/cron");
 
   const data = await response.json();
 
@@ -48,7 +49,11 @@ function LoginForm() {
 
       if (!result.error) {
         // set some auth state
-        router.replace("/"); //send to profile here
+        if (enteredPseudo === "admin") {
+          router.replace("/account/profile");
+        } else {
+          router.replace("/");
+        } //send to profile here
       } else {
         alert(result.error);
       }
@@ -81,8 +86,14 @@ function LoginForm() {
             />
           </div>
           <div className="auth-5">
-            <button>{isLogin ? "Login" : "Create Account"}</button>
-            <button type="button" onClick={switchAuthModeHandler}>
+            <button className="auth-5-but1">
+              {isLogin ? "Login" : "Create Account"}
+            </button>
+            <button
+              className="auth-5-but2"
+              type="button"
+              onClick={switchAuthModeHandler}
+            >
               {isLogin ? "Create new account" : "Login with existing account"}
             </button>
           </div>

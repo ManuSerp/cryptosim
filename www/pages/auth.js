@@ -11,7 +11,11 @@ function AuthPage() {
   useEffect(() => {
     getSession().then((session) => {
       if (session) {
-        router.replace("/");
+        if (session.user.name === "admin") {
+          router.replace("/account/profile");
+        } else {
+          router.replace("/");
+        }
       } else {
         setIsLoading(false);
       }
@@ -19,7 +23,7 @@ function AuthPage() {
   }, [router]);
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <p>Loading ...</p>;
   }
 
   return (
