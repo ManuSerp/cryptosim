@@ -2,11 +2,19 @@ import UserLeaderBoard from "./userleaderboard";
 import useSWR from "swr";
 import { useSession } from "next-auth/react";
 
+/**
+ * This fetches the Leaderboard data
+ * @param {string} url 
+ * @returns response from the API
+ */
 const fetcherLeaderBoard = async (url) => {
   const response = await fetch(url).then((response) => response.json());
   return response;
 };
 
+/**
+ * This is the Leaderboard function that renders the Leaderboard
+ */
 export default function BalanceLeaderBoard() {
   const { data, error } = useSWR("/api/db/leader_board", fetcherLeaderBoard, {
     refreshInterval: 30000,

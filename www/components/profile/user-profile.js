@@ -1,6 +1,10 @@
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 
+/**
+ * This is the function that fetches the user data from the API
+ * @returns {JSX}
+ */
 function UserProfile() {
   const { data: session, status } = useSession();
   const loading = status === "loading";
