@@ -1,9 +1,12 @@
 import clientPromise from "../../../lib/mongodb";
 import { hash } from "bcryptjs";
+import { getSession } from "next-auth/react";
 
 async function handler(req, res) {
+  const sess = await getSession({ req });
+
   //Only POST mothod is accepted
-  if (req.method === "POST") {
+  if (req.method === "POST" && sess.user.name === "admin") {
     //Getting email and password from body
     const { pseudo, password } = req.body;
     //Validate

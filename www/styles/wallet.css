@@ -16,7 +16,9 @@
   border-radius: 8px;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 2%;
   margin: 2%;
   padding: 1%;
+  text-transform: uppercase;
 }
