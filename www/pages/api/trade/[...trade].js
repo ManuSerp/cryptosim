@@ -57,7 +57,7 @@ export default async function handler(req, res) {
     value_to_pay = json[from] * req.query.trade[2];
   }
 
-  if (result[from] && result[from] >= value_to_pay) {
+  if (result[from] && result[from] >= value_to_pay && req.query.trade[2] > 0) {
     //update
     let coins_after = result[from] - value_to_pay;
     let new_coins = req.query.trade[2];
