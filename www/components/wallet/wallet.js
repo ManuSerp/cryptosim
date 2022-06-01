@@ -2,12 +2,20 @@ import CoinCard from "./walletcontents";
 import useSWR from "swr";
 import { useSession } from "next-auth/react";
 
+
+/** 
+ * This is the function that fetches the data from the API 
+ * @param {string} url - The url to fetch
+ */
 async function searchWallet(url) {
   const response = await fetch(url);
   const data = await response.json();
   return data;
 }
 
+/**
+ * This is the Wallet function that renders the wallet 
+ */
 export default function Wallet() {
   const { data: session, status } = useSession();
   const loading = status === "loading";

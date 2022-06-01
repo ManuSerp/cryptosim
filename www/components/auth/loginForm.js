@@ -86,8 +86,14 @@ function LoginForm() {
             />
           </div>
           <div className="auth-5">
-            <button>{isLogin ? "Login" : "Create Account"}</button>
-            <button type="button" onClick={switchAuthModeHandler}>
+            <button className="auth-5-but1">
+              {isLogin ? "Login" : "Create Account"}
+            </button>
+            <button
+              className="auth-5-but2"
+              type="button"
+              onClick={switchAuthModeHandler}
+            >
               {isLogin ? "Create new account" : "Login with existing account"}
             </button>
           </div>
