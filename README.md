@@ -1,6 +1,6 @@
 # cryptosim
 CRYPTOSIM:
-Notre projet sera  un simulateur de plateforme de vente et achat de cryptomonnaie. Le but de ce projet est pouvoir classer les différents utilisateurs selon les résultats qu'ils obtiennent en vendant et en achetant des cryptomonnaies. Chaque utilisateur aura un capital de départ et pourra donc investir ce capital. 
+Notre projet est  un simulateur de plateforme de vente et achat de cryptomonnaie. Le but de ce projet est pouvoir classer les différents utilisateurs selon les résultats qu'ils obtiennent en vendant et en achetant des cryptomonnaies. Chaque utilisateur aura un capital de départ et pourra donc investir ce capital. 
 Sur la page d'acceuil, l'utilsateur pourra voir son capital actuel et les variations de son capital au cours du temps sur un graphique. Ceci sera son portefeuille.
 L'utilisateur pourra aussi voir le cours des différentes cryptomonnaies disponibles sur le site, ainsi que leurs variations au cours du temps.
 Il y aura aussi une option échange ou l'utilsateur pourra voir quelles cryptomonnaies peuvent être échangées et pourra donc vendre et acheter des coins.
